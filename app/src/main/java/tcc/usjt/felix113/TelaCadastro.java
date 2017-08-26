@@ -22,6 +22,9 @@ public class TelaCadastro extends AppCompatActivity {
     RadioButton rdCadProfssional;
     CompoundButton radioGroup1;
 
+    public TelaCadastro() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +44,8 @@ public class TelaCadastro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(rdCadCliente.isChecked()) {
-                    Intent abrirTelaPrincipalCliente = new Intent(TelaCadastro.this, TelaCliente.class);
-                    startActivity(abrirTelaPrincipalCliente);
+                        Intent abrirTelaPrincipalCliente = new Intent(TelaCadastro.this, TelaCliente.class);
+                        startActivity(abrirTelaPrincipalCliente);
                 }if(rdCadProfssional.isChecked()){
                     Intent abrirTelaPrincipalCliente = new Intent(TelaCadastro.this, TelaProfissional.class);
                     startActivity(abrirTelaPrincipalCliente);
