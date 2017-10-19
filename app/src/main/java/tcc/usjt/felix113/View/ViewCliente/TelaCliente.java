@@ -1,4 +1,4 @@
-package tcc.usjt.felix113;
+package tcc.usjt.felix113.View.ViewCliente;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,16 +12,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ViewFlipper;
 
-public class TelaCliente extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import tcc.usjt.felix113.FragmentTelaEditarPerfil;
+import tcc.usjt.felix113.R;
+import tcc.usjt.felix113.ServicosAgendados;
+
+public class TelaCliente extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
 
-    private ImageView imagem ;
-    private TextView textView;
-    private final int  Galeria_Imagens = 1;
-    private final int PERMISSAO_REQUEST = 2;
+
+    private ImageView carro, casa, aprendizado, pessoal, tecnologia, pet, saude ;
+
+    ViewFlipper viewFlipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,60 +44,75 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
         navigationView.setNavigationItemSelectedListener(this);
 
 
-/*
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            } else {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        PERMISSAO_REQUEST);
-            }
-        }
+        carro = (ImageView)findViewById(R.id.imageViewTelaClienteCarro);
+        casa = (ImageView)findViewById(R.id.imageViewTelaCLienteCasa);
+        aprendizado = (ImageView)findViewById(R.id.imageViewTelaClienteCurso);
+        pessoal = (ImageView)findViewById(R.id.imageViewTelaClientePessoal);
+        tecnologia = (ImageView)findViewById(R.id.imageViewTelaClienteTecnologia);
+        pet = (ImageView)findViewById(R.id.imageViewTelaClientePet);
+        saude = (ImageView)findViewById(R.id.imageViewTelaClienteSaude);
 
-        imagem = (ImageView) findViewById(R.id.imageTelaCliente);
-        textView = (TextView) findViewById(R.id.txtTelaClienteEditarImage);
 
-        textView.setOnClickListener(new View.OnClickListener() {
+        carro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, Galeria_Imagens);
+                Intent intent = new Intent(TelaCliente.this, TelaServicosVeiculos.class);
+                startActivity(intent);
+
 
             }
         });
-*/
 
-    }
-  /*  @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode== RESULT_OK && requestCode== Galeria_Imagens) {
-            Uri selectedImage= data.getData();
-            String[] filePath= { MediaStore.Images.Media.DATA};
-            Cursor c = getContentResolver().query(selectedImage,filePath, null, null, null);
-            c.moveToFirst();
-            int columnIndex= c.getColumnIndex(filePath[0]);
-            String picturePath= c.getString(columnIndex);
-            c.close();
-            Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
-            imagem.setImageBitmap(thumbnail);
-        }
-    }
+        casa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             Intent intent = new Intent(TelaCliente.this, TelaServicosCasa.class);
+                startActivity(intent);
 
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
-        if(requestCode== PERMISSAO_REQUEST) {
-            if(grantResults.length> 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // A permissão foi concedida. Pode continuar
-            } else{
-                // A permissão foi negada. Precisa ver o que deve ser desabilitado
             }
-            return;
-        }
+        });
+        aprendizado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaCliente.this, TelaServicosCursos.class);
+                startActivity(intent);
+
+            }
+        });
+        pessoal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaCliente.this, TelaServicosPessoal.class);
+                startActivity(intent);
+
+            }
+        });
+        pet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaCliente.this, TelaServicosPet.class);
+                startActivity(intent);
+
+            }
+        });
+        tecnologia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaCliente.this, TelaServicosTecnologia.class);
+                startActivity(intent);
+
+            }
+        });
+        saude.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaCliente.this, TelaServicosSaude.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
-*/
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -137,15 +157,19 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         if (id == R.id.navCliEditaPerfil) {
-            fragment = new FragmentTelaEditarPerdil();
+            fragment = new FragmentTelaEditarPerfil();
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentTelaCliente, fragment).commit();
 
         } else if (id == R.id.navCliBuscaServico) {
+            fragment = new FragmentTelaEditarPerfil();
+            getSupportFragmentManager().beginTransaction().replace(R.id.FragmentTelaCliente, fragment).commit();
 
         } else if (id == R.id.navCliServicosAgendados) {
             Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, ServicosAgendados.class);
             startActivity(abrirTelaSelecaoCadastro);
+
         } else if (id == R.id.navCliAjuda) {
+
 
         } else if (id == R.id.navCliInfo) {
 

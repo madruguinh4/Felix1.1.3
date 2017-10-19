@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="tcc.usjt.felix113.TelaProfissional"
+    tools:context="tcc.usjt.felix113.View.ViewProfissional.TelaProfissional"
     tools:showIn="@layout/app_bar_tela_profissional">
 
 </android.support.constraint.ConstraintLayout>

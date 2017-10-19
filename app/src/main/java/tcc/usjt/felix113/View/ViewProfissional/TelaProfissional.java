@@ -1,4 +1,4 @@
-package tcc.usjt.felix113;
+package tcc.usjt.felix113.View.ViewProfissional;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import tcc.usjt.felix113.R;
 
 public class TelaProfissional extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

@@ -161,7 +161,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:textSize="18dp"
-            android:text="Cadastrar"/>
+            android:text="Cadastrar"
+            android:onClick="userReg"/>
     </LinearLayout>
 
 </LinearLayout>

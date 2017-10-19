@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="tcc.usjt.felix113">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,15 +21,30 @@
         </activity>
         <activity android:name=".TelaCadastro" />
         <activity
-            android:name=".TelaCliente"
+            android:name=".View.ViewCliente.TelaCliente"
             android:label="@string/title_activity_tela_cliente"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TelaProfissional"
+            android:name=".View.ViewProfissional.TelaProfissional"
             android:label="@string/title_activity_tela_profissional"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ServicosAgendados" />
-        <activity android:name=".ServicosAgendados2"></activity>
+        <activity android:name=".ServicosAgendados2" />
+        <activity android:name=".View.ViewCliente.TelaServicosVeiculos" />
+        <activity android:name=".View.ViewCliente.TelaServicosCasa" />
+        <activity android:name=".View.ViewCliente.TelaServicosCursos" />
+        <activity android:name=".View.ViewCliente.TelaServicosPet" />
+        <activity android:name=".View.ViewCliente.TelaServicosPessoal" />
+        <activity android:name=".View.ViewCliente.TelaServicosTecnologia" />
+        <activity android:name=".View.ViewProfissional.TelaCadastrarServicos" />
+        <activity android:name=".View.ViewCliente.TelaServicosSaude" />
+        <activity android:name=".View.ViewProfissional.TelaProfssionalCadastraVeiculos" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraCasa" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraCursos" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraPessoal" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraPet" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraSaude" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraTecnologia"></activity>
     </application>
 
 </manifest>

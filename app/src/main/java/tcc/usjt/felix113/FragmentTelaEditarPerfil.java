@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class FragmentTelaEditarPerdil extends Fragment {
+public class FragmentTelaEditarPerfil extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

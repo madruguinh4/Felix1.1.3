@@ -37,7 +37,8 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        android:onClick="userLogin"/>
 
     <TextView
         android:id="@+id/txtCadastro"
