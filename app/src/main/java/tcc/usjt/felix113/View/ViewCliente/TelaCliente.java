@@ -24,7 +24,7 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
 
 
 
-    private ImageView carro, casa, aprendizado, pessoal, tecnologia, pet, saude ;
+    private ImageView carro, casa, aprendizado, pessoal, tecnologia, pet, saude,fotografia ;
 
     ViewFlipper viewFlipper;
     @Override
@@ -51,6 +51,7 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
         tecnologia = (ImageView)findViewById(R.id.imageViewTelaClienteTecnologia);
         pet = (ImageView)findViewById(R.id.imageViewTelaClientePet);
         saude = (ImageView)findViewById(R.id.imageViewTelaClienteSaude);
+        fotografia = (ImageView)findViewById(R.id.imageViewTelaClienteFotografia);
 
 
         carro.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +109,15 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
             public void onClick(View v) {
                 Intent intent = new Intent(TelaCliente.this, TelaServicosSaude.class);
                 startActivity(intent);
+
+            }
+        });
+        fotografia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaCliente.this, TelaServicoFotografia.class);
+                startActivity(intent);
+
 
             }
         });

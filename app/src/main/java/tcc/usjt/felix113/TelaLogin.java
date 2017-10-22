@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import tcc.usjt.felix113.View.ViewCliente.TelaCliente;
 
+import tcc.usjt.felix113.View.SelecaoDeTipoDeCadastro;
+
+
 import static tcc.usjt.felix113.R.layout.tela_login;
 
 public class TelaLogin extends AppCompatActivity {
@@ -39,7 +42,7 @@ public class TelaLogin extends AppCompatActivity {
         txtCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent abrirTelaSelecaoCadastro = new Intent(TelaLogin.this, TelaCadastro.class);
+                Intent abrirTelaSelecaoCadastro = new Intent(TelaLogin.this, SelecaoDeTipoDeCadastro.class);
                 startActivity(abrirTelaSelecaoCadastro);
             }
         });

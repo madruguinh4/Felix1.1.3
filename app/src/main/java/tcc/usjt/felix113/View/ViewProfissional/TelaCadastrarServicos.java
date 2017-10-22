@@ -10,7 +10,7 @@ import tcc.usjt.felix113.R;
 
 public class TelaCadastrarServicos extends AppCompatActivity {
 
-    private ImageView carro, casa, aprendizado, pessoal, tecnologia, pet, saude ;
+    private ImageView carro, casa, aprendizado, pessoal, tecnologia, pet, saude, fotografia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,21 @@ public class TelaCadastrarServicos extends AppCompatActivity {
         tecnologia = (ImageView)findViewById(R.id.imageViewTelaClienteTecnologia);
         pet = (ImageView)findViewById(R.id.imageViewTelaClientePet);
         saude = (ImageView)findViewById(R.id.imageViewTelaClienteSaude);
+        fotografia = (ImageView)findViewById(R.id.imageViewTelaClienteFotografia);
+
+//recebendo dados atravez de intent para poder finalizar o cadastro do profissional
+
+
+        Intent intent = getIntent();
+        final String nomerecebe = (String)intent.getSerializableExtra("nome");
+        final String sobrenomerecebe = (String)intent.getSerializableExtra("sobrenome");
+        final String emailrecebe = (String)intent.getSerializableExtra("email");
+        final String telefonerecebe = (String)intent.getSerializableExtra("telefone");
+        final String senharecebe = (String)intent.getSerializableExtra("senha");
+        final String confirmesenharecebe = (String)intent.getSerializableExtra("confirmesenha");
+
+
+
 
         carro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,8 +105,29 @@ public class TelaCadastrarServicos extends AppCompatActivity {
 
             }
         });
+        fotografia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaCadastrarServicos.this, TelaProfissionalCadastraFotografia.class);
 
+                String fot = "Fotografia";
+
+                intent = intent.putExtra("nome", nomerecebe);
+                intent = intent.putExtra("sobrenome", sobrenomerecebe);
+                intent = intent.putExtra("email", emailrecebe);
+                intent = intent.putExtra("telefone", telefonerecebe);
+                intent = intent.putExtra("senha", senharecebe);
+                intent = intent.putExtra("confirmesenha", confirmesenharecebe);
+                intent = intent.putExtra("fotografia", fot);
+
+
+                startActivity(intent);
+
+
+            }
+        });
 
     }
+
 
 }

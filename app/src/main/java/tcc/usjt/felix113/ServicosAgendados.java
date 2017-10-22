@@ -38,6 +38,7 @@ public class ServicosAgendados extends AppCompatActivity {
     }
 
     private ArrayList<ListViewServicosAgendadosCustom> adicionarServicos() {
+
         ArrayList<ListViewServicosAgendadosCustom> listViewServicosAgendadosCustoms = new ArrayList<ListViewServicosAgendadosCustom>();
         ListViewServicosAgendadosCustom e  = new ListViewServicosAgendadosCustom("Desenvolvedor de Banco de Dados SQLite",
                 "Administrador Banco de dados", R.drawable.pedro);

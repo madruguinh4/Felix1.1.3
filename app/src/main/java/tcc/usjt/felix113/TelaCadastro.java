@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -15,8 +14,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import tcc.usjt.felix113.Model.CadastroPessoasRest;
 import tcc.usjt.felix113.Present.Usuario;
-
-import tcc.usjt.felix113.View.ViewProfissional.TelaCadastrarServicos;
 
 public class TelaCadastro extends AppCompatActivity {
 
@@ -39,9 +36,9 @@ public class TelaCadastro extends AppCompatActivity {
         final EditText confirmeSenha = (EditText)findViewById(R.id.editCadConfirmeSenha);
         Button btnCadastrar = (Button)findViewById(R.id.btnCadCdastar);
 
-        final RadioButton rdCadCliente = (RadioButton)findViewById(R.id.rdCadCliente);
+   //     final RadioButton rdCadCliente = (RadioButton)findViewById(R.id.rdCadCliente);
         // rdCadProfssional = (RadioButton) findViewById(R.id.rdCadProfissional);
-        final RadioButton rdCadProfissional  = (RadioButton)findViewById(R.id.rdCadProfissional);
+  //      final RadioButton rdCadProfissional  = (RadioButton)findViewById(R.id.rdCadProfissional);
 
 
 
@@ -61,7 +58,7 @@ public class TelaCadastro extends AppCompatActivity {
                 usuario.setTelefone(telefone.getText().toString());
                 usuario.setSenha(senha.getText().toString());
                 usuario.setConfirmeSenha(confirmeSenha.getText().toString());
-
+/*
                 if (rdCadCliente.isChecked()) {
                     int aux =1;
                     usuario.setTipoUsuario(aux);
@@ -72,7 +69,7 @@ public class TelaCadastro extends AppCompatActivity {
                         usuario.setTipoUsuario(aux);
                     }
                 }
-
+*/
                 CadastroPessoasRest cadastroPessoaRest = CadastroPessoasRest.retrofit.create(CadastroPessoasRest.class);
                 final Call<Void> call = cadastroPessoaRest.inserePessoa(usuario);
                 call.enqueue(new Callback<Void>() {
@@ -80,15 +77,12 @@ public class TelaCadastro extends AppCompatActivity {
                     public void onResponse(Call<Void> call, Response<Void> response) {
                         if (dialog.isShowing())
                             dialog.dismiss();
-                        if(rdCadCliente.isChecked()) {
+
                             Toast.makeText(getBaseContext(), "Usuario Cadastro com Sucesso", Toast.LENGTH_SHORT).show();
                             Intent voltaTelaIncial = new Intent(TelaCadastro.this, TelaLogin.class);
                             startActivity(voltaTelaIncial);
-                        }if(rdCadProfissional.isChecked()){
-                            Toast.makeText(getBaseContext(), "Vamos Cadastrar os serviços", Toast.LENGTH_SHORT).show();
-                            Intent voltaTelaIncial = new Intent(TelaCadastro.this, TelaCadastrarServicos.class);
-                            startActivity(voltaTelaIncial);
-                        }
+
+
                     }
 
                     @Override
@@ -101,10 +95,6 @@ public class TelaCadastro extends AppCompatActivity {
                 });
             }
         });
-
-
-
-
 
        /* btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override

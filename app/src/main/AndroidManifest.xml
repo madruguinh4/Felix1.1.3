@@ -44,7 +44,12 @@
         <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraPessoal" />
         <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraPet" />
         <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraSaude" />
-        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraTecnologia"></activity>
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraTecnologia" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraFotografia" />
+        <activity android:name=".View.ViewCliente.TelaServicoFotografia" />
+        <activity android:name=".View.SelecaoDeTipoDeCadastro" />
+        <activity android:name=".View.TelaCadastroProfissional" />
+        <activity android:name=".View.ViewProfissional.TelaFinalizandoCadastroProfissional"></activity>
     </application>
 
 </manifest>
