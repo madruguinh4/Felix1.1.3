@@ -14,6 +14,18 @@ public class UsuarioProfissional {
     private String senha;
     private String confirmeSenha;
     private int tipoUsuario;
+    private String veiculo;
+    private String casa;
+    private String pessoal;
+    private String tecnologia;
+    private String fotografia;
+    private String curso;
+    private String pet;
+    private String saude;
+    private int media;
+
+
+
 
     public int getServicos() {
         return servicos;
@@ -84,4 +96,83 @@ public class UsuarioProfissional {
         this.confirmeSenha = confirmeSenha;
     }
 
+    public int getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(int tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
+    public String getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(String veiculo) {
+        this.veiculo = veiculo;
+    }
+
+    public String getCasa() {
+        return casa;
+    }
+
+    public void setCasa(String casa) {
+        this.casa = casa;
+    }
+
+    public String getPessoal() {
+        return pessoal;
+    }
+
+    public void setPessoal(String pessoal) {
+        this.pessoal = pessoal;
+    }
+
+    public String getTecnologia() {
+        return tecnologia;
+    }
+
+    public void setTecnologia(String tecnologia) {
+        this.tecnologia = tecnologia;
+    }
+
+    public String getFotografia() {
+        return fotografia;
+    }
+
+    public void setFotografia(String fotografia) {
+        this.fotografia = fotografia;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public String getPet() {
+        return pet;
+    }
+
+    public void setPet(String pet) {
+        this.pet = pet;
+    }
+
+    public String getSaude() {
+        return saude;
+    }
+
+    public void setSaude(String saude) {
+        this.saude = saude;
+    }
+
+    public int getMedia() {
+        return media;
+    }
+
+    public void setMedia(int media) {
+        this.media = media;
+    }
 }

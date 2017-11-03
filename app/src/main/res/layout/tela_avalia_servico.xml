@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/imageTelaAvaliaServico"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_weight="0.16"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+
+
+    <RatingBar
+        android:id="@+id/rdAvaliaServico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/txtNota"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Nota " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:id="@+id/txtNomeAvaliaServico"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="Nome: " />
+
+
+        <TextView
+            android:id="@+id/textViewTelaAvaliaServicoNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+
+        >
+
+
+        <TextView
+            android:id="@+id/textViewCadastrocategori"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Categoria:" />
+
+        <TextView
+            android:id="@+id/txtTelaAvaliaServicoCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Categoria" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textViewCadastroServic"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Serviço:" />
+
+        <TextView
+            android:id="@+id/textViewTelaAvaliaServicoServico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Serviço" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTelaAvaliaServicoSalvar"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_weight="0.16"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="100dp"
+        android:text="Salvar" />
+
+</LinearLayout>

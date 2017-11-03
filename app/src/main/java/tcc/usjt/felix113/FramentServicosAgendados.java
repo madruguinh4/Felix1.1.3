@@ -38,29 +38,29 @@ public class FramentServicosAgendados extends Fragment {
 
     private ArrayList<ListViewServicosAgendadosCustom> adicionarServicos() {
         ArrayList<ListViewServicosAgendadosCustom> listViewServicosAgendadosCustoms = new ArrayList<ListViewServicosAgendadosCustom>();
-        ListViewServicosAgendadosCustom e  = new ListViewServicosAgendadosCustom("Desenvolvedor de Banco de Dados SQLite",
-                "Administrador Banco de dados", R.drawable.pedro);
+        ListViewServicosAgendadosCustom e  = new ListViewServicosAgendadosCustom("Contrução",
+                "Pedreiro de fundação", R.drawable.pedro);
                  listViewServicosAgendadosCustoms.add(e);
 
-        e = new ListViewServicosAgendadosCustom("Dsenevolvedor  Android",
-                "Desenvolvedor de Aplicativos Android", R.drawable.david);
+        e = new ListViewServicosAgendadosCustom("Pintor Interno",
+                "Pintor interno de casa e predios ", R.drawable.david);
         listViewServicosAgendadosCustoms.add(e);
 
-        e = new ListViewServicosAgendadosCustom("Analista de Banco de Dados",
-                "Analise e implementação de Banco de Dados", R.drawable.george);
+        e = new ListViewServicosAgendadosCustom("Encanador",
+                "Encanador domestico", R.drawable.george);
         listViewServicosAgendadosCustoms.add(e);
 
-        e = new ListViewServicosAgendadosCustom("Analista Android",
-                "Analista desenolvedor de Aplicativos Android", R.drawable.ste);
+        e = new ListViewServicosAgendadosCustom("Faxineira",
+                "Diarista de casa de empresas", R.drawable.ste);
         listViewServicosAgendadosCustoms.add(e);
 
-        e = new ListViewServicosAgendadosCustom("Analista de Requesitos de Banco de Dados SQLite",
-                "Analista Pleno de Requesitos e Gerenciador de Projetos ", R.drawable.caique);
+        e = new ListViewServicosAgendadosCustom("Eletricista",
+                "Eletricista Predial", R.drawable.caique);
         listViewServicosAgendadosCustoms.add(e);
 
 
-        e = new ListViewServicosAgendadosCustom("Gerente de Projetos",
-                "Gerencia projetos de desenvolvimento", R.drawable.jessica);
+        e = new ListViewServicosAgendadosCustom("Faxineira",
+                "Diarista de casa", R.drawable.jessica);
         listViewServicosAgendadosCustoms.add(e);
 
 

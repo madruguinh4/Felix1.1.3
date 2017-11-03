@@ -49,7 +49,9 @@
         <activity android:name=".View.ViewCliente.TelaServicoFotografia" />
         <activity android:name=".View.SelecaoDeTipoDeCadastro" />
         <activity android:name=".View.TelaCadastroProfissional" />
-        <activity android:name=".View.ViewProfissional.TelaFinalizandoCadastroProfissional"></activity>
+        <activity android:name=".View.ViewProfissional.TelaFinalizandoCadastroProfissional" />
+        <activity android:name=".View.ViewCliente.TelaAvaliaServico" />
+        <activity android:name=".View.ViewCliente.TelaClienteListaServico" />
     </application>
 
 </manifest>

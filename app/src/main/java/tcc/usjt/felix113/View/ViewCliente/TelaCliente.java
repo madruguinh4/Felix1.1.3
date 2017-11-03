@@ -166,11 +166,7 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
         Boolean FragmentoSelecionado = false;
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        if (id == R.id.navCliEditaPerfil) {
-            fragment = new FragmentTelaEditarPerfil();
-            getSupportFragmentManager().beginTransaction().replace(R.id.FragmentTelaCliente, fragment).commit();
-
-        } else if (id == R.id.navCliBuscaServico) {
+         if (id == R.id.navCliBuscaServico) {
             fragment = new FragmentTelaEditarPerfil();
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentTelaCliente, fragment).commit();
 

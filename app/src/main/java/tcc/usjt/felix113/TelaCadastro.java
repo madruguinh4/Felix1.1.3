@@ -14,6 +14,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import tcc.usjt.felix113.Model.CadastroPessoasRest;
 import tcc.usjt.felix113.Present.Usuario;
+import tcc.usjt.felix113.View.ViewCliente.TelaCliente;
 
 public class TelaCadastro extends AppCompatActivity {
 
@@ -51,7 +52,9 @@ public class TelaCadastro extends AppCompatActivity {
                 dialog.setMessage("Carregando...");
                 dialog.setCancelable(false);
                 dialog.show();
+
                 Usuario usuario = new Usuario();
+
                 usuario.setNome(nome.getText().toString());
                 usuario.setSobrenome(sobrenome.getText().toString());
                 usuario.setEmail(email.getText().toString());
@@ -79,7 +82,7 @@ public class TelaCadastro extends AppCompatActivity {
                             dialog.dismiss();
 
                             Toast.makeText(getBaseContext(), "Usuario Cadastro com Sucesso", Toast.LENGTH_SHORT).show();
-                            Intent voltaTelaIncial = new Intent(TelaCadastro.this, TelaLogin.class);
+                            Intent voltaTelaIncial = new Intent(TelaCadastro.this, TelaCliente.class);
                             startActivity(voltaTelaIncial);
 
 

@@ -26,19 +26,7 @@ public class TelaProfissionalCadastraFotografia extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_profissional_cadastra_fotografia);
 
-
-        Intent intent = getIntent();
-        final String nomerecebe = (String)intent.getSerializableExtra("nome");
-        final String sobrenomerecebe = (String)intent.getSerializableExtra("sobrenome");
-        final String emailrecebe = (String)intent.getSerializableExtra("email");
-        final String telefonerecebe = (String)intent.getSerializableExtra("telefone");
-        final String senharecebe = (String)intent.getSerializableExtra("senha");
-        final String confirmesenharecebe = (String)intent.getSerializableExtra("confirmesenha");
-        final String fotografiarecebe =(String)intent.getSerializableExtra("fotografia");
-
-
         final ArrayList<String> servicos  = preencherDados();
-
         listView = (ListView) findViewById(R.id.ListViewProfFotografia);
         adapter = new ArrayAdapter<String>(this, simple_list_item_1, servicos);
         listView.setAdapter(adapter);
@@ -46,19 +34,7 @@ public class TelaProfissionalCadastraFotografia extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-              //  Toast.makeText(getApplication(), "" +servicos.get(position).toString(), Toast.LENGTH_SHORT).show();
-                   Intent intent = new Intent(TelaProfissionalCadastraFotografia.this, TelaFinalizandoCadastroProfissional.class );
-
-
-               intent = intent.putExtra("nome", nomerecebe);
-                intent = intent.putExtra("sobrenome", sobrenomerecebe);
-                intent = intent.putExtra("email", emailrecebe);
-                intent = intent.putExtra("telefone", telefonerecebe);
-                intent = intent.putExtra("senha", senharecebe);
-                intent = intent.putExtra("confirmesenha", confirmesenharecebe);
-                intent = intent.putExtra("fotografia", fotografiarecebe);
-                intent = intent.putExtra("servico" ,servicos.get(position).toString() );
-
+                Intent intent = new Intent(TelaProfissionalCadastraFotografia.this, TelaFinalizandoCadastroProfissional.class );
 
                 startActivity(intent);
             }

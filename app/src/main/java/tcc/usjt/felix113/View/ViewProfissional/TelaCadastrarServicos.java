@@ -30,7 +30,7 @@ public class TelaCadastrarServicos extends AppCompatActivity {
 
 //recebendo dados atravez de intent para poder finalizar o cadastro do profissional
 
-
+/*
         Intent intent = getIntent();
         final String nomerecebe = (String)intent.getSerializableExtra("nome");
         final String sobrenomerecebe = (String)intent.getSerializableExtra("sobrenome");
@@ -39,7 +39,7 @@ public class TelaCadastrarServicos extends AppCompatActivity {
         final String senharecebe = (String)intent.getSerializableExtra("senha");
         final String confirmesenharecebe = (String)intent.getSerializableExtra("confirmesenha");
 
-
+*/
 
 
         carro.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +110,7 @@ public class TelaCadastrarServicos extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TelaCadastrarServicos.this, TelaProfissionalCadastraFotografia.class);
 
-                String fot = "Fotografia";
+          /*      String fot = "Fotografia";
 
                 intent = intent.putExtra("nome", nomerecebe);
                 intent = intent.putExtra("sobrenome", sobrenomerecebe);
@@ -119,7 +119,7 @@ public class TelaCadastrarServicos extends AppCompatActivity {
                 intent = intent.putExtra("senha", senharecebe);
                 intent = intent.putExtra("confirmesenha", confirmesenharecebe);
                 intent = intent.putExtra("fotografia", fot);
-
+*/
 
                 startActivity(intent);
 
