@@ -19,6 +19,7 @@ public class TelaProfissionalCadastraSaude extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
     String [] servicos = {"Acompanhante de Idoso ", "Enfermeira", "Fisioterapeuta", "Nutricionista", "Psicólogo","Cuidador"};
+    String saude = "Saude";
 
 
     @Override
@@ -36,6 +37,8 @@ public class TelaProfissionalCadastraSaude extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(TelaProfissionalCadastraSaude.this, TelaFinalizandoCadastroProfissional.class );
+                intent.putExtra("subCategoria", servicos.get(position).toString() );
+                intent.putExtra("Categoria", saude );
 
                 startActivity(intent);
             }

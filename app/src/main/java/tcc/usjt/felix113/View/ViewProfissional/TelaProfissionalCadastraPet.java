@@ -20,6 +20,7 @@ public class TelaProfissionalCadastraPet extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
     String [] servicos = {"Passeador de Cães ", "Banho e Tosa", "Hospedagem", "Taxi ", "Adestrador ", "Veterináio"};
+    String pet = "Pet";
 
 
     @Override
@@ -37,6 +38,8 @@ public class TelaProfissionalCadastraPet extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(TelaProfissionalCadastraPet.this, TelaFinalizandoCadastroProfissional.class );
+                intent.putExtra("subCategoria", servicos.get(position).toString() );
+                intent.putExtra("Categoria", pet );
 
                 startActivity(intent);
             }

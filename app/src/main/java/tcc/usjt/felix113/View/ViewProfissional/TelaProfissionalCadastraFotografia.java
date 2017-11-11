@@ -17,6 +17,7 @@ import static android.R.layout.simple_list_item_1;
 public class TelaProfissionalCadastraFotografia extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
+    String fotografia = "Fotográfia";
      String [] servicos = {"Eventos Corporativos", "Eventos infantis", "Casamento", "Batizado", "Aniversários"};
 
 
@@ -35,13 +36,15 @@ public class TelaProfissionalCadastraFotografia extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(TelaProfissionalCadastraFotografia.this, TelaFinalizandoCadastroProfissional.class );
+                intent.putExtra("subCategoria", servicos.get(position).toString() );
+                intent.putExtra("Categoria", fotografia );
 
                 startActivity(intent);
             }
         });
 
-
     }
+
 
     private ArrayList<String> preencherDados() {
         ArrayList<String> dados = new ArrayList<String>();

@@ -1,22 +1,23 @@
 package tcc.usjt.felix113.View;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import tcc.usjt.felix113.Present.UsuarioProfissional;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.util.ArrayList;
+
+import tcc.usjt.felix113.Model.Profissional;
 import tcc.usjt.felix113.R;
-import tcc.usjt.felix113.View.ViewProfissional.TelaCadastrarServicos;
-import tcc.usjt.felix113.Model.CadastraProfissionalRest;
-
 
 
 public class TelaCadastroProfissional extends AppCompatActivity {
@@ -55,41 +56,49 @@ public class TelaCadastroProfissional extends AppCompatActivity {
                 dialog.setCancelable(false);
                 dialog.show();
 
-                UsuarioProfissional usuarioProfissional = new UsuarioProfissional();
+                Profissional profissional = new Profissional();
 
-                usuarioProfissional.setNome(nomeprof.getText().toString());
-                usuarioProfissional.setSobrenome(sobrenomeprof.getText().toString());
-                usuarioProfissional.setEmail(emailprof.getText().toString());
-                usuarioProfissional.setTelefone(telefoneprof.getText().toString());
-                usuarioProfissional.setSenha(senhaprof.getText().toString());
+                profissional.setNome(nomeprof.getText().toString());
+                profissional.setSobrenome(sobrenomeprof.getText().toString());
+                profissional.setEmail(emailprof.getText().toString());
+                profissional.setTelefone(telefoneprof.getText().toString());
+                profissional.setSenha(senhaprof.getText().toString());
 
+                makeRequest(profissional);
 
-                CadastraProfissionalRest cadastroProfissionalRest = CadastraProfissionalRest.retrofit.create(CadastraProfissionalRest.class);
-                final Call<Void> call = cadastroProfissionalRest.inserePessoa(usuarioProfissional);
-                call.enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        if (dialog.isShowing())
-                            dialog.dismiss();
+//                Intent voltaTelaIncial = new Intent(TelaCadastroProfissional.this, TelaCadastrarServicos.class);
+//                startActivity(voltaTelaIncial);
 
-                        Toast.makeText(getBaseContext(), "Usuario Cadastro com Sucesso", Toast.LENGTH_SHORT).show();
-                        Intent voltaTelaIncial = new Intent(TelaCadastroProfissional.this, TelaCadastrarServicos.class);
-                        startActivity(voltaTelaIncial);
-
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-
-                        if (dialog.isShowing())
-                            dialog.dismiss();
-                        Toast.makeText(getBaseContext(), "Não foi possível fazer a conexão", Toast.LENGTH_SHORT).show();
-                    }
-                });
 
 
             }
         });
+    }
+
+    public void makeRequest(Profissional profissional) {
+        HttpURLConnection httpcon;
+        ArrayList<String> result = null;
+        try {
+
+            httpcon = (HttpURLConnection) ((new URL("http://localhost:8888/api/profissional/").openConnection()));
+            httpcon.setDoOutput(false);
+            httpcon.setRequestMethod("POST");
+            httpcon.setRequestProperty("Content-Type","application/json");
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            String aux = objectMapper.writeValueAsString(profissional);
+            byte[] outputInBytes = aux.getBytes("UTF-8");
+            OutputStream os = httpcon.getOutputStream();
+            os.write(outputInBytes);
+            os.close();
+            httpcon.connect();
+
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

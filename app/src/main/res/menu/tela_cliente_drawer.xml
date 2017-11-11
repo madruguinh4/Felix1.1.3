@@ -4,11 +4,15 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/navCliBuscaServico"
-            android:title="Buscar Serviços" />
-        <item
             android:id="@+id/navCliServicosAgendados"
+            android:icon="@drawable/servicosagendados"
             android:title="Serviços Agendandos" />
+
+        <item
+            android:id="@+id/navCliCancelarServico"
+            android:icon="@drawable/cancelarservico"
+            android:title="Cancelar Serviços" />
+      
 
 
     </group>
@@ -17,9 +21,11 @@
         <menu>
             <item
                 android:id="@+id/navCliAjuda"
+                android:icon="@drawable/help2"
                 android:title="Ajuda" />
             <item
                 android:id="@+id/navCliInfo"
+                android:icon="@drawable/informacao2"
                 android:title="Informações" />
         </menu>
     </item>

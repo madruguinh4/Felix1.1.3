@@ -16,7 +16,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
-import tcc.usjt.felix113.FragmentTelaEditarPerfil;
 import tcc.usjt.felix113.R;
 import tcc.usjt.felix113.ServicosAgendados;
 
@@ -166,11 +165,7 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
         Boolean FragmentoSelecionado = false;
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-         if (id == R.id.navCliBuscaServico) {
-            fragment = new FragmentTelaEditarPerfil();
-            getSupportFragmentManager().beginTransaction().replace(R.id.FragmentTelaCliente, fragment).commit();
-
-        } else if (id == R.id.navCliServicosAgendados) {
+         if (id == R.id.navCliServicosAgendados) {
             Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, ServicosAgendados.class);
             startActivity(abrirTelaSelecaoCadastro);
 

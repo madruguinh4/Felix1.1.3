@@ -19,6 +19,7 @@ public class TelaProfssionalCadastraVeiculos extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
     String [] servicos = {"Mecânico ", "Auto Elétrica", "Instalador de Som", "Guincho ", "Funilaria ", "Martelinho de Ouro", "Borracheiro",};
+    String veiculo = "Veiculo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class TelaProfssionalCadastraVeiculos extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(TelaProfssionalCadastraVeiculos.this, TelaFinalizandoCadastroProfissional.class );
+                intent.putExtra("subCategoria", servicos.get(position).toString() );
+                intent.putExtra("Categoria", veiculo );
 
                 startActivity(intent);
             }
