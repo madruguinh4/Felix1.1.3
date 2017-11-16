@@ -1,6 +1,7 @@
 package tcc.usjt.felix113.View;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,8 +17,11 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import retrofit2.Callback;
 import tcc.usjt.felix113.Model.Profissional;
 import tcc.usjt.felix113.R;
+import tcc.usjt.felix113.View.ViewProfissional.TelaCadastrarServicos;
+import tcc.usjt.felix113.View.ViewProfissional.TelaProfissional;
 
 
 public class TelaCadastroProfissional extends AppCompatActivity {
@@ -56,7 +60,7 @@ public class TelaCadastroProfissional extends AppCompatActivity {
                 dialog.setCancelable(false);
                 dialog.show();
 
-                Profissional profissional = new Profissional();
+                final Profissional profissional = new Profissional();
 
                 profissional.setNome(nomeprof.getText().toString());
                 profissional.setSobrenome(sobrenomeprof.getText().toString());
@@ -64,41 +68,20 @@ public class TelaCadastroProfissional extends AppCompatActivity {
                 profissional.setTelefone(telefoneprof.getText().toString());
                 profissional.setSenha(senhaprof.getText().toString());
 
-                makeRequest(profissional);
-
-//                Intent voltaTelaIncial = new Intent(TelaCadastroProfissional.this, TelaCadastrarServicos.class);
-//                startActivity(voltaTelaIncial);
-
-
-
+                try {
+                    APICaller apiCaller = new APICaller();
+                    boolean call = apiCaller.call(profissional);
+                    if(call){
+                        dialog.cancel();
+                        Intent intent = new Intent(TelaCadastroProfissional.this,TelaCadastrarServicos.class);
+                        startActivity(intent);
+                    }else{
+                        System.out.println("not success");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
-    }
-
-    public void makeRequest(Profissional profissional) {
-        HttpURLConnection httpcon;
-        ArrayList<String> result = null;
-        try {
-
-            httpcon = (HttpURLConnection) ((new URL("http://localhost:8888/api/profissional/").openConnection()));
-            httpcon.setDoOutput(false);
-            httpcon.setRequestMethod("POST");
-            httpcon.setRequestProperty("Content-Type","application/json");
-
-            ObjectMapper objectMapper = new ObjectMapper();
-            String aux = objectMapper.writeValueAsString(profissional);
-            byte[] outputInBytes = aux.getBytes("UTF-8");
-            OutputStream os = httpcon.getOutputStream();
-            os.write(outputInBytes);
-            os.close();
-            httpcon.connect();
-
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
