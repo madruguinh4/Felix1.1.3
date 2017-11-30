@@ -2,13 +2,17 @@ package tcc.usjt.felix113.View.ViewProfissional;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import tcc.usjt.felix113.Present.UsuarioProfissional;
+import java.lang.reflect.Method;
+
+import tcc.usjt.felix113.Model.SubcategoriaCasa;
 import tcc.usjt.felix113.R;
 
 public class TelaFinalizandoCadastroProfissional extends AppCompatActivity {
@@ -20,7 +24,7 @@ public class TelaFinalizandoCadastroProfissional extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_finalizando_cadastro_profissional);
 
-        TextView servico, categoria;
+        final TextView servico, categoria;
 
 
        final Intent intent = getIntent();
@@ -43,23 +47,40 @@ public class TelaFinalizandoCadastroProfissional extends AppCompatActivity {
                 dialog.setMessage("Carregando...");
                 dialog.setCancelable(false);
                 dialog.show();
-                UsuarioProfissional usuarioProfissional = new UsuarioProfissional();
-       //         usuarioProfissional.setNome(nomerecebe);
-        //        usuarioProfissional.setSobrenome(sobrenomerecebe);
-       //         usuarioProfissional.setEmail(emailrecebe);
-       //         usuarioProfissional.setTelefone(telefonerecebe);
-        //        usuarioProfissional.setSenha(senharecebe);
-            //    usuarioProfissional.setConfirmeSenha(confirmesenharecebe);
-             //   usuarioProfissional.setFotografia(fotografiarecebe);
-
-
-
-                        Intent intent = new Intent(TelaFinalizandoCadastroProfissional.this, TelaProfissional.class);
-                        startActivity(intent);
-
-
+                SharedPreferences pref = getSharedPreferences("profissional", 0);
+                long id = pref.getLong("id", 0L);
+                create(id,Categoria);
+                Intent intent = new Intent(TelaFinalizandoCadastroProfissional.this, TelaProfissional.class);
+                startActivity(intent);
             }
         });
+    }
+
+    private void create(Long id,String categoria){
+
+        try {
+            boolean success = false;
+            APICaller apiCaller = new APICaller();
+            SubcategoriaCasa subcategoriaCasa = apiCaller.call(id);
+            if(subcategoriaCasa != null){
+                Method method = subcategoriaCasa.getClass().getMethod("set" + categoria, String.class);
+                method.invoke(String.class,"1");
+                success = apiCaller.callUpdate(subcategoriaCasa);
+            }else{
+                subcategoriaCasa = new SubcategoriaCasa();
+                subcategoriaCasa.setIdProfissional(id);
+                Method method = subcategoriaCasa.getClass().getMethod("set" + categoria, String.class);
+                method.invoke(String.class,"1");
+                success = apiCaller.call(subcategoriaCasa);
+            }
+
+            if(!success){
+                Toast.makeText(this, "Erro tente novamentte ", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

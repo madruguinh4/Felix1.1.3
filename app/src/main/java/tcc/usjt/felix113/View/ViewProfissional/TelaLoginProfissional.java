@@ -1,4 +1,4 @@
-package tcc.usjt.felix113;
+package tcc.usjt.felix113.View.ViewProfissional;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,22 +12,20 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import tcc.usjt.felix113.Model.Cliente;
+import tcc.usjt.felix113.Model.Profissional;
 import tcc.usjt.felix113.Present.Usuario;
+import tcc.usjt.felix113.R;
 import tcc.usjt.felix113.View.SelecaoDeTipoDeCadastro;
-import tcc.usjt.felix113.View.ViewCliente.APICaller;
-import tcc.usjt.felix113.View.ViewCliente.TelaCliente;
 
 import static tcc.usjt.felix113.R.layout.tela_login;
 
-public class TelaLogin extends AppCompatActivity {
+public class TelaLoginProfissional extends AppCompatActivity {
 
 
 
     EditText editEmail, editSenha;
     Button btnLogin;
-    TextView txtCadastro;
-
+    TextView txtCadastroprof;
 
 
     @Override
@@ -36,23 +34,21 @@ public class TelaLogin extends AppCompatActivity {
         setContentView(tela_login);
 
 
-        editEmail = (EditText) findViewById(R.id.ediEmail1);
-        editSenha = (EditText) findViewById(R.id.editSenha1);
-        btnLogin = (Button)findViewById(R.id.btnLogin);
-        txtCadastro = (TextView) findViewById(R.id.txtCadastro);
+        editEmail = (EditText) findViewById(R.id.ediEmail1prof);
+        editSenha = (EditText) findViewById(R.id.editSenha1prof);
+        btnLogin = (Button)findViewById(R.id.btnLoginprof);
+        txtCadastroprof =(TextView) findViewById(R.id.txtCadastroprof);
 
 
 
-
-        txtCadastro.setOnClickListener(new View.OnClickListener() {
+        txtCadastroprof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent abrirTelaSelecaoCadastro = new Intent(TelaLogin.this, SelecaoDeTipoDeCadastro.class);
+                Intent abrirTelaSelecaoCadastro = new Intent(TelaLoginProfissional.this, SelecaoDeTipoDeCadastro.class);
                 startActivity(abrirTelaSelecaoCadastro);
             }
         });
-
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +62,7 @@ public class TelaLogin extends AppCompatActivity {
                 usuario.setEmail(email);
                 usuario.setSenha(senha);
 
-               if(validaLogin(email,senha)){
+                if(validaLogin(email,senha)){
                     login(email,senha);
                 }
             }
@@ -89,13 +85,13 @@ public class TelaLogin extends AppCompatActivity {
     private void login(String email, String senha){
         try {
             APICaller apiCaller = new APICaller();
-            Cliente cliente = apiCaller.call(email, senha);
-            if(cliente != null){
-                SharedPreferences sp = getSharedPreferences("cliente", 0);
+            Profissional profissional = apiCaller.call(email, senha);
+            if(profissional != null){
+                SharedPreferences sp = getSharedPreferences("profissional", 0);
                 SharedPreferences.Editor ed = sp.edit();
-                ed.putLong("id", cliente.getId());
+                ed.putLong("id", profissional.getId());
                 ed.commit();
-                Intent intent = new Intent(TelaLogin.this,TelaCliente.class);
+                Intent intent = new Intent(TelaLoginProfissional.this,TelaProfissional.class);
                 startActivity(intent);
             }else{
                 Toast.makeText(this, "Email ou senha inválidos", Toast.LENGTH_SHORT).show();

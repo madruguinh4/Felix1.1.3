@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TelaCadastro" />
+        <activity android:name=".View.ViewCliente.TelaCadastro" />
         <activity
             android:name=".View.ViewCliente.TelaCliente"
             android:label="@string/title_activity_tela_cliente"
@@ -29,6 +29,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ServicosAgendados" />
         <activity android:name=".ServicosAgendados2" />
+        <activity android:name=".View.ViewProfissional.TelaLoginProfissional" />
         <activity android:name=".View.ViewCliente.TelaServicosVeiculos" />
         <activity android:name=".View.ViewCliente.TelaServicosCasa" />
         <activity android:name=".View.ViewCliente.TelaServicosCursos" />
@@ -47,11 +48,12 @@
         <activity android:name=".View.ViewProfissional.TelaProfissionalCadastraFotografia" />
         <activity android:name=".View.ViewCliente.TelaServicoFotografia" />
         <activity android:name=".View.SelecaoDeTipoDeCadastro" />
-        <activity android:name=".View.TelaCadastroProfissional" />
+        <activity android:name=".View.ViewProfissional.TelaCadastroProfissional" />
         <activity android:name=".View.ViewProfissional.TelaFinalizandoCadastroProfissional" />
         <activity android:name=".View.ViewCliente.TelaAvaliaServico" />
         <activity android:name=".View.ViewCliente.TelaClienteListaServico" />
-        <activity android:name=".TelaProfissionaisDisponiveis"></activity>
+        <activity android:name=".TelaProfissionaisDisponiveis" />
+
     </application>
 
 </manifest>

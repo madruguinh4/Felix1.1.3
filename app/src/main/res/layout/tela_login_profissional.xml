@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/untitled" />
 
     <EditText
-        android:id="@+id/ediEmail1"
+        android:id="@+id/ediEmail1prof"
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -34,7 +34,7 @@
         />
 
     <EditText
-        android:id="@+id/editSenha1"
+        android:id="@+id/editSenha1prof"
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/ediEmail1"
@@ -46,7 +46,7 @@
         android:hint="Senha" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnLoginprof"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@+id/editSenha1"
@@ -57,7 +57,7 @@
         android:text="Login" />
 
     <TextView
-        android:id="@+id/txtCadastro"
+        android:id="@+id/txtCadastroprof"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnLogin"

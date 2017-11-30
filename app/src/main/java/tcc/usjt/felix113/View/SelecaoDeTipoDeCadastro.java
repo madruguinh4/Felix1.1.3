@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import tcc.usjt.felix113.R;
-import tcc.usjt.felix113.TelaCadastro;
+import tcc.usjt.felix113.View.ViewCliente.TelaCadastro;
+import tcc.usjt.felix113.View.ViewProfissional.TelaCadastroProfissional;
 
 public class SelecaoDeTipoDeCadastro extends AppCompatActivity {
 
