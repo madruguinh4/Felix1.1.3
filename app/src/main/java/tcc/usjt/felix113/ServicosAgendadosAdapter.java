@@ -35,10 +35,12 @@ public class ServicosAgendadosAdapter extends ArrayAdapter<ListViewServicosAgend
         TextView profissao= (TextView) rowView.findViewById(R.id.txtLinhaProfissao);
         TextView descricao= (TextView) rowView.findViewById(R.id.txtLinhaDescricao);
         ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
+        TextView nota = (TextView) rowView.findViewById(R.id.txtLinhaNota);
 
         profissao.setText(elementos.get(position).getProfissao());
         descricao.setText(elementos.get(position).getDescricao());
         imagem.setImageResource(elementos.get(position).getImagem());
+        nota.setText(elementos.get(position).getNota());
         return rowView;
     }
 

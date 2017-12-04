@@ -15,7 +15,7 @@ import tcc.usjt.felix113.Model.SubcategoriaCasa;
 
 public class APICaller {
 
-    private static final String BASE_URL = "http://192.168.0.90:8888";
+    private static final String BASE_URL = "http://192.168.0.21:8888";
 
 
     public boolean call(final Profissional body) throws IOException, InterruptedException {

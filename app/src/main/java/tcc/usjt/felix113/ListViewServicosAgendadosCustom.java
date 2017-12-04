@@ -9,11 +9,13 @@ public class ListViewServicosAgendadosCustom {
     private String Profissao;
     private int imagem; // vai armazenar o identificador do recurso
     private String descricao;
+    private int nota;
 
-    public ListViewServicosAgendadosCustom(String Profissao, String descricao, int imagem) {
+    public ListViewServicosAgendadosCustom(String Profissao, String descricao, int imagem, int nota) {
         this.Profissao= Profissao;
         this.descricao= descricao;
         this.imagem= imagem;
+        this.nota = nota;
     }
 
     public String getProfissao() {
@@ -40,5 +42,11 @@ public class ListViewServicosAgendadosCustom {
         this.descricao = descricao;
     }
 
+    public int getNota() {
+        return nota;
+    }
 
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
 }
