@@ -17,8 +17,6 @@ import tcc.usjt.felix113.View.Constants;
 public class APICaller {
 
 
-
-
     public boolean call(final Profissional body) throws IOException, InterruptedException {
 
         final boolean[] success = {false};

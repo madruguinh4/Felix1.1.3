@@ -39,28 +39,28 @@ public class FramentServicosAgendados extends Fragment {
     private ArrayList<ListViewServicosAgendadosCustom> adicionarServicos() {
         ArrayList<ListViewServicosAgendadosCustom> listViewServicosAgendadosCustoms = new ArrayList<ListViewServicosAgendadosCustom>();
         ListViewServicosAgendadosCustom e  = new ListViewServicosAgendadosCustom("Contrução",
-                "Pedreiro de fundação", R.drawable.pedro);
+                "Pedreiro de fundação", R.drawable.pedro, 10);
                  listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Pintor Interno",
-                "Pintor interno de casa e predios ", R.drawable.david);
+                "Pintor interno de casa e predios ", R.drawable.david,10);
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Encanador",
-                "Encanador domestico", R.drawable.george);
+                "Encanador domestico", R.drawable.george,10);
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Faxineira",
-                "Diarista de casa de empresas", R.drawable.ste);
+                "Diarista de casa de empresas", R.drawable.ste,10);
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Eletricista",
-                "Eletricista Predial", R.drawable.caique);
+                "Eletricista Predial", R.drawable.caique, 10);
         listViewServicosAgendadosCustoms.add(e);
 
 
         e = new ListViewServicosAgendadosCustom("Faxineira",
-                "Diarista de casa", R.drawable.jessica);
+                "Diarista de casa", R.drawable.jessica, 10);
         listViewServicosAgendadosCustoms.add(e);
 
 

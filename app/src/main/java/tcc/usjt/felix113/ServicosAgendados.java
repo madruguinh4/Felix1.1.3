@@ -41,28 +41,27 @@ public class ServicosAgendados extends AppCompatActivity {
 
         ArrayList<ListViewServicosAgendadosCustom> listViewServicosAgendadosCustoms = new ArrayList<ListViewServicosAgendadosCustom>();
         ListViewServicosAgendadosCustom e  = new ListViewServicosAgendadosCustom("Contrução",
-                "Pedreiro de fundação", R.drawable.pedro);
+                "Pedreiro de fundação", R.drawable.pedro,3);
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Pintor Interno",
-                "Pintor interno de casa e predios ", R.drawable.david);
+                "Pintor interno de casa e predios ", R.drawable.david, 2);
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Encanador",
-                "Encanador domestico", R.drawable.george);
+                "Encanador domestico", R.drawable.george, 5);
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Faxineira",
-                "Diarista de casa de empresas", R.drawable.ste);
+                "Diarista de casa de empresas", R.drawable.ste, 7);
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Eletricista",
-                "Eletricista Predial", R.drawable.caique);
+                "Eletricista Predial", R.drawable.caique, 5);
         listViewServicosAgendadosCustoms.add(e);
 
-
         e = new ListViewServicosAgendadosCustom("Faxineira",
-                "Diarista de casa", R.drawable.jessica);
+                "Diarista de casa", R.drawable.jessica, 7);
         listViewServicosAgendadosCustoms.add(e);
 
         return listViewServicosAgendadosCustoms;
