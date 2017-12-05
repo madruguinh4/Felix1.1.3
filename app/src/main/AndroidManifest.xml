@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TelaLogin">
+        <activity android:name=".SelecaoTipoLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,6 +53,8 @@
         <activity android:name=".View.ViewCliente.TelaAvaliaServico" />
         <activity android:name=".View.ViewCliente.TelaClienteListaServico" />
         <activity android:name=".TelaProfissionaisDisponiveis" />
+        <activity android:name=".TelaLoginProfissional" />
+        <activity android:name=".TelaLogin" />
 
     </application>
 

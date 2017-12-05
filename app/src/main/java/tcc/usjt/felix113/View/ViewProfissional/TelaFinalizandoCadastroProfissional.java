@@ -49,8 +49,9 @@ public class TelaFinalizandoCadastroProfissional extends AppCompatActivity {
                 dialog.show();
                 SharedPreferences pref = getSharedPreferences("profissional", 0);
                 long id = pref.getLong("id", 0L);
-                create(id,Categoria);
-                Intent intent = new Intent(TelaFinalizandoCadastroProfissional.this, TelaProfissional.class);
+                System.out.println("sub: " + Sub + "id: " + id);
+                create(id,Sub);
+                Intent intent = new Intent(TelaFinalizandoCadastroProfissional.this, TelaCadastrarServicos.class);
                 startActivity(intent);
             }
         });
@@ -63,14 +64,12 @@ public class TelaFinalizandoCadastroProfissional extends AppCompatActivity {
             APICaller apiCaller = new APICaller();
             SubcategoriaCasa subcategoriaCasa = apiCaller.call(id);
             if(subcategoriaCasa != null){
-                Method method = subcategoriaCasa.getClass().getMethod("set" + categoria, String.class);
-                method.invoke(String.class,"1");
+                subcategoriaCasa.set(categoria,"1");
                 success = apiCaller.callUpdate(subcategoriaCasa);
             }else{
                 subcategoriaCasa = new SubcategoriaCasa();
                 subcategoriaCasa.setIdProfissional(id);
-                Method method = subcategoriaCasa.getClass().getMethod("set" + categoria, String.class);
-                method.invoke(String.class,"1");
+                subcategoriaCasa.set(categoria,"1");
                 success = apiCaller.call(subcategoriaCasa);
             }
 

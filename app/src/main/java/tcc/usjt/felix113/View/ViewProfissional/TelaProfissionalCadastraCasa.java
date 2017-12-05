@@ -42,10 +42,6 @@ public class TelaProfissionalCadastraCasa extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
     }
     private ArrayList<String> preencherDados() {
         ArrayList<String> dados = new ArrayList<String>();

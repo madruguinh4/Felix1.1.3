@@ -11,11 +11,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import tcc.usjt.felix113.Model.Profissional;
 import tcc.usjt.felix113.Model.SubcategoriaCasa;
+import tcc.usjt.felix113.View.Constants;
 
 
 public class APICaller {
 
-    private static final String BASE_URL = "http://192.168.0.90:8888";
+
 
 
     public boolean call(final Profissional body) throws IOException, InterruptedException {
@@ -29,7 +30,7 @@ public class APICaller {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(Constants.BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
@@ -58,7 +59,7 @@ public class APICaller {
 
     public Profissional call(final String email, final String senha) throws IOException, InterruptedException {
 
-        final Profissional[] success = {};
+        final Profissional[] success = {null};
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -67,7 +68,7 @@ public class APICaller {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(Constants.BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
@@ -94,7 +95,7 @@ public class APICaller {
 
     public SubcategoriaCasa call(final long idProfissional) throws IOException, InterruptedException {
 
-        final SubcategoriaCasa[] success = {};
+        final SubcategoriaCasa[] success = {null};
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -103,7 +104,7 @@ public class APICaller {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(Constants.BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
@@ -114,6 +115,7 @@ public class APICaller {
                 try {
                     Response<SubcategoriaCasa> execute = call.execute();
                     SubcategoriaCasa body = execute.body();
+                    System.out.println("casa: " + body);
                     success[0] = body;
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -139,7 +141,7 @@ public class APICaller {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(Constants.BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
@@ -175,7 +177,7 @@ public class APICaller {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(Constants.BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 

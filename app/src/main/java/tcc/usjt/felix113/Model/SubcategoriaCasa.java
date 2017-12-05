@@ -99,4 +99,20 @@ public class SubcategoriaCasa {
 		this.mediaProfisional = mediaProfisional;
 	}
 
+	public void set(String campo, String valor){
+		if("pintor".equalsIgnoreCase(campo)){
+			setPintor(valor);
+		}else if("eletricista".equalsIgnoreCase(campo)){
+			setEletricista(valor);
+		}else if("cozinheira".equalsIgnoreCase(campo)){
+			setCozinheira(valor);
+		}else if("jardineiro".equalsIgnoreCase(campo)){
+			setJardineiro(valor);
+		}else if("motorista".equalsIgnoreCase(campo)) {
+			setMotorista(valor);
+		}else if("diarista".equalsIgnoreCase(campo)) {
+			setDiarista(valor);
+		}
+	}
+
 }

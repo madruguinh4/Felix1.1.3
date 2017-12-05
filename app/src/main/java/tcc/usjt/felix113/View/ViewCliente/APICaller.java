@@ -10,11 +10,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import tcc.usjt.felix113.Model.Cliente;
+import tcc.usjt.felix113.View.Constants;
 
 public class APICaller {
-
-    private static final String BASE_URL = "http://192.168.0.90:8888";
-
 
     public boolean call(final Cliente body) throws IOException, InterruptedException {
 
@@ -27,7 +25,7 @@ public class APICaller {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(Constants.BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
@@ -56,7 +54,7 @@ public class APICaller {
 
     public Cliente call(final String email, final String senha) throws IOException, InterruptedException {
 
-        final Cliente[] success = {};
+        final Cliente[] success = {null};
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -65,7 +63,7 @@ public class APICaller {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(Constants.BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
