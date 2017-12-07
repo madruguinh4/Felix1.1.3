@@ -55,7 +55,12 @@
         <activity android:name=".TelaProfissionaisDisponiveis" />
         <activity android:name=".TelaLoginProfissional" />
         <activity android:name=".TelaLogin" />
-
+        <activity android:name=".View.ViewCliente.TelaAjuda" />
+        <activity android:name=".View.ViewCliente.TelaContrataProfissional" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalEscolhePrestaServico" />
+        <activity android:name=".View.ViewCliente.TelaListaServicosRealizados" />
+        <activity android:name=".View.ViewProfissional.TelaMeusServicos" />
+        <activity android:name=".View.ViewProfissional.TelaCancelaServicos"></activity>
     </application>
 
 </manifest>

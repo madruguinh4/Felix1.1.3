@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Method;
-
 import tcc.usjt.felix113.Model.SubcategoriaCasa;
 import tcc.usjt.felix113.R;
 
@@ -51,7 +49,7 @@ public class TelaFinalizandoCadastroProfissional extends AppCompatActivity {
                 long id = pref.getLong("id", 0L);
                 System.out.println("sub: " + Sub + "id: " + id);
                 create(id,Sub);
-                Intent intent = new Intent(TelaFinalizandoCadastroProfissional.this, TelaCadastrarServicos.class);
+                Intent intent = new Intent(TelaFinalizandoCadastroProfissional.this, TelaProfissional.class);
                 startActivity(intent);
             }
         });

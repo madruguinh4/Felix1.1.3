@@ -12,13 +12,10 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import tcc.usjt.felix113.Model.Cliente;
 import tcc.usjt.felix113.Model.Profissional;
-import tcc.usjt.felix113.Present.Usuario;
-import tcc.usjt.felix113.View.SelecaoDeTipoDeCadastro;
 import tcc.usjt.felix113.View.ViewProfissional.APICaller;
 import tcc.usjt.felix113.View.ViewProfissional.TelaCadastrarServicos;
-import tcc.usjt.felix113.View.ViewProfissional.TelaProfissional;
+import tcc.usjt.felix113.View.ViewProfissional.TelaCadastroProfissional;
 
 
 public class TelaLoginProfissional extends AppCompatActivity {
@@ -41,6 +38,17 @@ public class TelaLoginProfissional extends AppCompatActivity {
         editSenha = (EditText) findViewById(R.id.editSenha1);
         btnLogin = (Button)findViewById(R.id.btnLogin);
         txtCadastro = (TextView) findViewById(R.id.txtCadastro);
+
+
+        txtCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent abrirTelaSelecaoCadastro = new Intent(TelaLoginProfissional.this, TelaCadastroProfissional.class);
+                startActivity(abrirTelaSelecaoCadastro);
+            }
+        });
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
 

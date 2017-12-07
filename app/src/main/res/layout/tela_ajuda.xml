@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tcc.usjt.felix113.View.ViewCliente.TelaAjuda">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtTelaAjuda2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EFETUAR LOGIN: \n
+1.	Sistema exibe a tela Login \n
+2.	O usuário informa os dados \n
+3.	Sistema válida os dados \n
+4.	Sistema exibe Menu Inicial \n
+\n
+
+REALIZAR CADASTRO \n
+1.	O aplicativo exibe os campos para preenchimento \n
+2.	O usuário preenche os campos para cadastro (Nome, Sobrenome, Telefone, E-mail e Senha) \n
+3.	O usuário seleciona a opção “cadastrar \n
+\n
+RECOMENDAR SERVIÇO \n
+1.	O cliente acessar sua conta com e-mail e senha \n
+2.	O cliente entra no menu de serviços Agendados \n
+3.	O cliente seleciona o serviço que foi agendando e avalia o profissional \n
+\n
+CANCELAR SERVIÇO \n
+1.	Sistema exibe Menu Cancelar Serviço \n
+2.	Cliente/Profissional seleciona a opção Cancelar Serviços \n
+3.	Sistema retorna serviços agendados \n
+4.	Cliente/Profissional seleciona o serviço \n
+5.	Cliente/Profissional confirma o cancelamento \n
+6.	Sistema realiza o cancelamento \n
+\n
+CONTRATAR PROFISSIONAL \n
+1.	O cliente entra com e-mail e senha no FELIX \n
+2.	O cliente escolhe o serviço desejado por categoria \n
+3.	 O cliente escolhe o profissional desejado \n
+4.	O sistema envia uma informação para o prestador de serviço para ele sobre o serviço \n
+
+" />
+    </ScrollView>
+</LinearLayout>

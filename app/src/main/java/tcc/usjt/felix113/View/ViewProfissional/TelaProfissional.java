@@ -1,5 +1,6 @@
 package tcc.usjt.felix113.View.ViewProfissional;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,6 +22,8 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+    //    final ClienteCustom clienteCustom = new ClienteCustom(null,null,null,null,null,null);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -30,7 +33,30 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+// Preenche o List View da tela do Profissional
+
+
+/*       ListView lista = (ListView)findViewById(R.id.ListViewConteTelaProfissional);
+
+        //    final ArrayList<Cliente> list = adiciona();
+
+       ArrayAdapter<ClienteCustom> adapter = new ClienteAgendadosAdapter(this, clienteCustom);
+        lista.setAdapter(adapter);
+
+        lista.setOnClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent (TelaProfissional.this, TelaProfissionalEscolhePrestaServico.class);
+
+                intent.putExtra("nome", clienteCustom.getNome());
+                intent.putExtra("telefone", clienteCustom.getTelefone());
+
+            }
+        });
+*/
+
     }
+
 
     @Override
     public void onBackPressed() {
@@ -48,7 +74,6 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
         getMenuInflater().inflate(R.menu.tela_profissional, menu);
         return true;
     }
-
 
 
     @Override
@@ -72,17 +97,18 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.NavProfMeusServicos) {
+            Intent intent = new Intent(TelaProfissional.this,TelaMeusServicos.class);
+            startActivity(intent);
+        } else if (id == R.id.navProfServicosAgendados) {
+            Intent intent = new Intent(TelaProfissional.this,TelaCadastrarServicos.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.navProfAjuda) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.navProfInfo) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.navProfissionalSair) {
 
         }
 

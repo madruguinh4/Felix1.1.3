@@ -16,6 +16,7 @@ public class ServicosAgendados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servicos_agendados);
+
         ListView lista = (ListView)findViewById(R.id.ListServicosAgendados);
 
         final ArrayList<ListViewServicosAgendadosCustom> list = adicionarServicos();
@@ -41,27 +42,27 @@ public class ServicosAgendados extends AppCompatActivity {
 
         ArrayList<ListViewServicosAgendadosCustom> listViewServicosAgendadosCustoms = new ArrayList<ListViewServicosAgendadosCustom>();
         ListViewServicosAgendadosCustom e  = new ListViewServicosAgendadosCustom("Contrução",
-                "Pedreiro de fundação", R.drawable.pedro,3);
+                "Pedreiro de fundação", R.drawable.pedro,"3");
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Pintor Interno",
-                "Pintor interno de casa e predios ", R.drawable.david, 2);
+                "Pintor interno de casa e predios ", R.drawable.david, "2");
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Encanador",
-                "Encanador domestico", R.drawable.george, 5);
+                "Encanador domestico", R.drawable.george, "5");
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Faxineira",
-                "Diarista de casa de empresas", R.drawable.ste, 7);
+                "Diarista de casa de empresas", R.drawable.ste, "7");
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Eletricista",
-                "Eletricista Predial", R.drawable.caique, 5);
+                "Eletricista Predial", R.drawable.caique, "4");
         listViewServicosAgendadosCustoms.add(e);
 
         e = new ListViewServicosAgendadosCustom("Faxineira",
-                "Diarista de casa", R.drawable.jessica, 7);
+                "Diarista de casa", R.drawable.jessica, "3");
         listViewServicosAgendadosCustoms.add(e);
 
         return listViewServicosAgendadosCustoms;

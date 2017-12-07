@@ -169,14 +169,29 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
             Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, ServicosAgendados.class);
             startActivity(abrirTelaSelecaoCadastro);
 
-        } else if (id == R.id.navCliAjuda) {
+
+         } else if (id == R.id.navCliAvaliarServico) {
+             Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, TelaListaServicosRealizados.class);
+             startActivity(abrirTelaSelecaoCadastro);
 
 
-        } else if (id == R.id.navCliInfo) {
+         } else if (id == R.id.navCliAjuda) {
+             Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, TelaAjuda.class);
+             startActivity(abrirTelaSelecaoCadastro);
+
+
+         } else if (id == R.id.navCliInfo) {
+
+
+         } else if (id == R.id.navClilSair) {
+             onBackPressed();
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 }

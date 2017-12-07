@@ -3,32 +3,25 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/NavProfMeusServicos"
             android:icon="@drawable/ic_menu_camera"
             android:title="Meus Serviços" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/navProfServicosAgendados"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Adicionar Serviço" />
+
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/navProfAjuda"
+                android:icon="@drawable/help2"
                 android:title="Ajuda" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/navProfInfo"
+                android:icon="@drawable/informacao2"
                 android:title="Informações" />
             <item
                 android:id="@+id/navProfissionalSair"

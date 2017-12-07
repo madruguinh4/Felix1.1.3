@@ -14,7 +14,7 @@ import java.io.IOException;
 
 import tcc.usjt.felix113.Model.Cliente;
 import tcc.usjt.felix113.Present.Usuario;
-import tcc.usjt.felix113.View.SelecaoDeTipoDeCadastro;
+import tcc.usjt.felix113.View.ViewCliente.TelaCadastro;
 import tcc.usjt.felix113.View.ViewCliente.APICaller;
 import tcc.usjt.felix113.View.ViewCliente.TelaCliente;
 
@@ -44,7 +44,7 @@ public class TelaLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent abrirTelaSelecaoCadastro = new Intent(TelaLogin.this, SelecaoDeTipoDeCadastro.class);
+                Intent abrirTelaSelecaoCadastro = new Intent(TelaLogin.this, TelaCadastro.class);
                 startActivity(abrirTelaSelecaoCadastro);
             }
         });
