@@ -9,17 +9,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import tcc.usjt.felix113.Model.Profissional;
 
 /**
  * Created by alan0 on 23/08/2017.
  */
 
-public class ServicosAgendadosAdapter extends ArrayAdapter<ListViewServicosAgendadosCustom> {
+public class ServicosAgendadosAdapter extends ArrayAdapter<Profissional> {
 
     private final Context context;
-    private final ArrayList<ListViewServicosAgendadosCustom> elementos;
+    private final List<Profissional> elementos;
 
-    public ServicosAgendadosAdapter(Context context, ArrayList<ListViewServicosAgendadosCustom> elementos) {
+    public ServicosAgendadosAdapter(Context context, List<Profissional> elementos) {
         super(context, R.layout.linha, elementos );
         this.context= context;
         this.elementos = elementos;
@@ -37,10 +40,10 @@ public class ServicosAgendadosAdapter extends ArrayAdapter<ListViewServicosAgend
         ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
         TextView nota = (TextView) rowView.findViewById(R.id.txtLinhaNota);
 
-        profissao.setText(elementos.get(position).getProfissao());
-        descricao.setText(elementos.get(position).getDescricao());
-        imagem.setImageResource(elementos.get(position).getImagem());
-        nota.setText(elementos.get(position).getNota());
+        profissao.setText(elementos.get(position).getNome());
+        descricao.setText(elementos.get(position).getTelefone());
+        imagem.setImageResource(R.drawable.david);
+        nota.setText(elementos.get(position).getMediaProfisional().toString());
         return rowView;
     }
 

@@ -21,7 +21,7 @@ public class ServicosAgendados extends AppCompatActivity {
 
         final ArrayList<ListViewServicosAgendadosCustom> list = adicionarServicos();
 
-        ArrayAdapter adapter = new ServicosAgendadosAdapter(this, list);
+        ArrayAdapter adapter = new ServicosAgendadosAdapter(this, null);
         lista.setAdapter(adapter);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {

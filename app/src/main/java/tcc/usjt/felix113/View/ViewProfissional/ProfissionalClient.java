@@ -1,5 +1,7 @@
 package tcc.usjt.felix113.View.ViewProfissional;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -19,5 +21,6 @@ public interface ProfissionalClient {
     @GET("/api/profissional/{email}/{senha}")
     Call<Profissional> findByEmailAndSenha(@Path("email") String email, @Path("senha") String senha);
 
-
+    @GET("/api/profissional/categoria/{categoria}")
+    Call<List<Profissional>> categoria(@Path("categoria") String categoria);
 }

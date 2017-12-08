@@ -18,6 +18,7 @@ import tcc.usjt.felix113.R;
 import tcc.usjt.felix113.View.SelecaoDeTipoDeCadastro;
 
 import static tcc.usjt.felix113.R.layout.tela_login;
+import static tcc.usjt.felix113.R.layout.tela_login_profissional;
 
 public class TelaLoginProfissional extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public class TelaLoginProfissional extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(tela_login);
+        setContentView(tela_login_profissional);
 
 
         editEmail = (EditText) findViewById(R.id.ediEmail1prof);

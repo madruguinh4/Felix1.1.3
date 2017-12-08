@@ -38,7 +38,7 @@ public class TelaServicosCasa extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(TelaServicosCasa.this, TelaProfissionaisDisponiveis.class );
-
+                intent.putExtra("categoria",preencherDados().get(position));
                 startActivity(intent);
             }
         });

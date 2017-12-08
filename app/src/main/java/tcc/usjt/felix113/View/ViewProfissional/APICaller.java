@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -198,5 +199,41 @@ public class APICaller {
         thread.join();
 
         return success[0];
+    }
+
+    public List<Profissional> categoria(final String categoria) throws IOException, InterruptedException {
+
+        final List<Profissional>[] profissionals = new List[]{null};
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Gson gson = new GsonBuilder()
+                        .setLenient()
+                        .create();
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(Constants.BASE_URL)
+                        .addConverterFactory(GsonConverterFactory.create(gson))
+                        .build();
+
+                ProfissionalClient profissionalClient = retrofit.create(ProfissionalClient.class);
+
+                Call<List<Profissional>> call = profissionalClient.categoria(categoria.toLowerCase());
+
+                try {
+                    Response<List<Profissional>> execute = call.execute();
+                    profissionals[0] = execute.body();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+        thread.join();
+
+        return profissionals[0];
     }
 }
