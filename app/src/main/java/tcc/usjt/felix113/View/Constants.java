@@ -6,5 +6,5 @@ package tcc.usjt.felix113.View;
 
 public class Constants {
 
-    public static final String BASE_URL = "http://192.168.1.32:8888";
+    public static final String BASE_URL = "http://192.168.0.33:8888";
 }

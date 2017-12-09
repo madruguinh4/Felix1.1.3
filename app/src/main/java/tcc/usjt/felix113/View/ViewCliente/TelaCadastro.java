@@ -13,7 +13,6 @@ import java.io.IOException;
 
 import tcc.usjt.felix113.Model.Cliente;
 import tcc.usjt.felix113.R;
-import tcc.usjt.felix113.TelaLogin;
 
 public class TelaCadastro extends AppCompatActivity {
 

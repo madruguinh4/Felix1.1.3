@@ -2,10 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    android:layout_height="match_parent"
-    android:id="@+id/FragmentServicosAgendados"
-    >
 
     <TextView
         android:id="@+id/textView3"
@@ -13,12 +11,11 @@
         android:layout_height="wrap_content"
         android:textSize="30dp"
         android:layout_marginLeft="50dp"
-        android:text="Serviços Agendados" />
+        android:text="Indicações" />
 
     <ListView
-        android:id="@+id/ListServicosAgendados"
+        android:id="@+id/ListIndicacao"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </LinearLayout>

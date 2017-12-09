@@ -16,13 +16,14 @@ public class TelaListaServicosRealizados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_lista_servicos_realizados);
 
-        ListView lista = (ListView)findViewById(R.id.ListServicosRealizados);
+        final ListView lista = (ListView)findViewById(R.id.ListServicosRealizados);
 
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 Intent intent =new Intent(TelaListaServicosRealizados.this, TelaAvaliaServico.class );
+                intent.putExtra("nome",lista.getItemAtPosition(i).toString());
                 startActivity(intent);
             }
         });

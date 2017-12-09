@@ -174,6 +174,10 @@ public class TelaCliente extends AppCompatActivity implements NavigationView.OnN
              Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, TelaListaServicosRealizados.class);
              startActivity(abrirTelaSelecaoCadastro);
 
+         } else if (id == R.id.navCliCancelarServico) {
+             Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, TelaListaServicoParaCancelar.class);
+             startActivity(abrirTelaSelecaoCadastro);
+
 
          } else if (id == R.id.navCliAjuda) {
              Intent abrirTelaSelecaoCadastro = new Intent(TelaCliente.this, TelaAjuda.class);

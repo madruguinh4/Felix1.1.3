@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import tcc.usjt.felix113.View.ViewCliente.TelaLogin;
+
 public class SelecaoTipoLogin extends AppCompatActivity {
 
     ImageView cliente, profissional;

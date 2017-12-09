@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/NavProfMeusServicos"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/meuservicos"
             android:title="Meus Serviços" />
         <item
             android:id="@+id/navProfServicosAgendados"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/servicosagendados"
             android:title="Adicionar Serviço" />
 
     </group>

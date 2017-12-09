@@ -10,9 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
+import java.util.ArrayList;
+
+import tcc.usjt.felix113.ClienteCustom;
 import tcc.usjt.felix113.R;
-
 public class TelaProfissional extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -35,28 +41,47 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
 
 // Preenche o List View da tela do Profissional
 
+        final ArrayList<ClienteCustom> list = adicionarServicos();
+        ListView lista = (ListView)findViewById(R.id.ListViewConteTelaProfissional);
 
-/*       ListView lista = (ListView)findViewById(R.id.ListViewConteTelaProfissional);
 
-        //    final ArrayList<Cliente> list = adiciona();
-
-       ArrayAdapter<ClienteCustom> adapter = new ClienteAgendadosAdapter(this, clienteCustom);
+        ArrayAdapter adapter = new ClienteAgendadosAdapter(this, list);
         lista.setAdapter(adapter);
 
-        lista.setOnClickListener(new AdapterView.OnItemClickListener(){
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 Intent intent = new Intent (TelaProfissional.this, TelaProfissionalEscolhePrestaServico.class);
 
-                intent.putExtra("nome", clienteCustom.getNome());
-                intent.putExtra("telefone", clienteCustom.getTelefone());
-
+                intent.putExtra("nome", list.get(i).getNome());
+                intent.putExtra("telefone", list.get(i).getTelefone());
+                startActivity(intent);
             }
         });
-*/
 
     }
 
+    private ArrayList<ClienteCustom> adicionarServicos() {
+
+        ArrayList<ClienteCustom> clienteCustoms = new ArrayList<ClienteCustom>();
+        ClienteCustom e  = new ClienteCustom("Juliana","123123");
+        clienteCustoms.add(e);
+
+        e = new ClienteCustom("Pedro",
+                "1235677 ");
+        clienteCustoms.add(e);
+        e = new ClienteCustom("Maria",
+                "65432 ");
+        clienteCustoms.add(e);
+        e = new ClienteCustom("Jose",
+                "3456756 ");
+        clienteCustoms.add(e);
+        e = new ClienteCustom("Pedro",
+                "4324324 ");
+        clienteCustoms.add(e);
+
+        return clienteCustoms;
+    }
 
     @Override
     public void onBackPressed() {

@@ -11,7 +11,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import tcc.usjt.felix113.R;
-import tcc.usjt.felix113.TelaProfissionaisDisponiveis;
 
 import static android.R.layout.simple_list_item_1;
 import static tcc.usjt.felix113.R.layout.tela_servicos_casa;
@@ -37,8 +36,10 @@ public class TelaServicosCasa extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Intent intent = new Intent(TelaServicosCasa.this, TelaProfissionaisDisponiveis.class );
                 intent.putExtra("categoria",preencherDados().get(position));
+
                 startActivity(intent);
             }
         });

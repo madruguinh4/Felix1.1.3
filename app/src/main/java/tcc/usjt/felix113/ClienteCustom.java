@@ -6,13 +6,10 @@ public class ClienteCustom extends ArrayList<ClienteCustom> {
 
 	private Long id;
 
-	public ClienteCustom(Long id, String nome, String sobrenome, String telefone, String email, String senha) {
-		this.id = id;
+	public ClienteCustom(String nome, String telefone) {
 		this.nome = nome;
-		this.sobrenome = sobrenome;
 		this.telefone = telefone;
-		this.email = email;
-		this.senha = senha;
+
 	}
 
 	private String nome;
@@ -24,8 +21,9 @@ public class ClienteCustom extends ArrayList<ClienteCustom> {
 	private String email;
 
 	private String senha;
-	
-	public String getNome() {return nome;}
+
+
+    public String getNome() {return nome;}
 
 	public void setNome(String nome) {
 		this.nome = nome;

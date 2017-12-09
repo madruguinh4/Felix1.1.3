@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tcc.usjt.felix113.View.ViewProfissional.TelaProfissionalEscolhePrestaServico">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="80dp"
+        android:textSize="17dp"
+        android:textColor="#000000"
+        android:text="Este Cliente esta a sua procura!" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:textColor="#000000"
+        android:layout_height="wrap_content"
+        android:text="Nome" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:text="Telefone" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="Deseja Prestar este serviço?" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_marginTop="40dp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:id="@+id/bntSim"
+            android:layout_marginLeft="70dp"
+            android:textColor="#ffffff"
+            android:background="#506aff"
+            android:text="Não" />
+
+        <Button
+            android:id="@+id/btnNao"
+            android:layout_marginTop="40dp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            android:background="#506aff"
+            android:text="Sim" />
+    </LinearLayout>
+
+
+</LinearLayout>

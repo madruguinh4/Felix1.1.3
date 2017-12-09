@@ -11,7 +11,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import tcc.usjt.felix113.R;
-import tcc.usjt.felix113.TelaProfissionaisDisponiveis;
 
 import static android.R.layout.simple_list_item_1;
 

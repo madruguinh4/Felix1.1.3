@@ -13,6 +13,7 @@
         android:id="@+id/txtContentTelaProfissional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
 
         android:text="Pessoas que estão procurando os seus Serviços "
         android:textAlignment="center"
@@ -21,6 +22,7 @@
     <ListView
         android:id="@+id/ListViewConteTelaProfissional"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="match_parent" />
 
 

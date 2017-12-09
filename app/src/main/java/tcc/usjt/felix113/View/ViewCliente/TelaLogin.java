@@ -1,4 +1,4 @@
-package tcc.usjt.felix113;
+package tcc.usjt.felix113.View.ViewCliente;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,9 +14,7 @@ import java.io.IOException;
 
 import tcc.usjt.felix113.Model.Cliente;
 import tcc.usjt.felix113.Present.Usuario;
-import tcc.usjt.felix113.View.ViewCliente.TelaCadastro;
-import tcc.usjt.felix113.View.ViewCliente.APICaller;
-import tcc.usjt.felix113.View.ViewCliente.TelaCliente;
+import tcc.usjt.felix113.R;
 
 import static tcc.usjt.felix113.R.layout.tela_login;
 

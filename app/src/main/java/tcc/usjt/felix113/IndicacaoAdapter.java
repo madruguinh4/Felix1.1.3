@@ -16,13 +16,13 @@ import tcc.usjt.felix113.Model.Profissional;
  * Created by alan0 on 23/08/2017.
  */
 
-public class ServicosAgendadosAdapter extends ArrayAdapter<Profissional> {
+public class IndicacaoAdapter extends ArrayAdapter<Profissional> {
 
     private final Context context;
     private final List<Profissional> elementos;
 
-    public ServicosAgendadosAdapter(Context context, List<Profissional> elementos) {
-        super(context, R.layout.linha, elementos );
+    public IndicacaoAdapter(Context context, List<Profissional> elementos) {
+        super(context, R.layout.linhaindicacao, elementos );
         this.context= context;
         this.elementos = elementos;
     }
@@ -32,12 +32,12 @@ public class ServicosAgendadosAdapter extends ArrayAdapter<Profissional> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.linha, parent, false);
+        View rowView = inflater.inflate(R.layout.linhaindicacao, parent, false);
 
-        TextView profissao= (TextView) rowView.findViewById(R.id.txtLinhaProfissao);
-        TextView descricao= (TextView) rowView.findViewById(R.id.txtLinhaDescricao);
-        ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
-        TextView nota = (TextView) rowView.findViewById(R.id.txtLinhaNota);
+        TextView profissao= (TextView) rowView.findViewById(R.id.txtlinhaindicacaoProfissao);
+        TextView descricao= (TextView) rowView.findViewById(R.id.txtlinhaindicacaoDescricao);
+        ImageView imagem = (ImageView) rowView.findViewById(R.id.imagemindicacao);
+        TextView nota = (TextView) rowView.findViewById(R.id.txtlinhaindicacaoNota);
 
         profissao.setText(elementos.get(position).getNome());
         descricao.setText(elementos.get(position).getTelefone());

@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import tcc.usjt.felix113.R;
+import tcc.usjt.felix113.View.ViewCliente.TelaCancelaServicos;
 
 public class TelaMeusServicos extends AppCompatActivity {
 
@@ -18,13 +19,14 @@ public class TelaMeusServicos extends AppCompatActivity {
 
 
 
-        ListView lista = (ListView)findViewById(R.id.ListServicosProfissional);
+        final ListView lista = (ListView)findViewById(R.id.ListServicosProfissional);
 
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 Intent intent =new Intent(TelaMeusServicos.this, TelaCancelaServicos.class );
+                intent.putExtra("subCategoria", lista.getItemAtPosition(i).toString() );
                 startActivity(intent);
             }
         });
