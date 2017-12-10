@@ -30,7 +30,7 @@ public class TelaIndicacao extends AppCompatActivity {
         ListView lista = (ListView) findViewById(R.id.ListIndicacao);
 
 
-        ArrayAdapter adapter = new IndicacaoAdapter(this, list);
+        ArrayAdapter adapter = new IndicacaoAdapter(this, null);
         lista.setAdapter(adapter);
 
     }

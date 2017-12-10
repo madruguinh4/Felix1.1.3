@@ -34,7 +34,6 @@ public class ServicosAgendados extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 Intent intent =new Intent(ServicosAgendados.this, ServicosAgendados2.class );
 
-
                 intent.putExtra("profissao", list.get(i).getNome());
                 intent.putExtra("descricao", list.get(i).getTelefone());
                 intent.putExtra("Imagem", list.get(i).getMediaProfisional());
@@ -50,9 +49,7 @@ public class ServicosAgendados extends AppCompatActivity {
         List<Profissional> profissionalList = null;
         try {
             profissionalList = apiCaller.categoria(categoria);
-            for (Profissional profissional:profissionalList) {
-                System.out.println(profissional.getMediaProfisional() + " " + profissional.getNome());
-            }
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
