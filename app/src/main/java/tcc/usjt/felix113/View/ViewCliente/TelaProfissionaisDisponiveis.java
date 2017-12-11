@@ -25,7 +25,7 @@ public class TelaProfissionaisDisponiveis extends AppCompatActivity {
 
         ListView lista = (ListView)findViewById(R.id.ListProfDisponiveis);
 
-        String categoria = (String)getIntent().getSerializableExtra("categoria");
+        final String categoria = (String)getIntent().getSerializableExtra("categoria");
         final List<Profissional> list = adicionarServicos(categoria);
 
         ArrayAdapter adapter = new ServicosAgendadosAdapter(this, list);
@@ -39,6 +39,8 @@ public class TelaProfissionaisDisponiveis extends AppCompatActivity {
                 intent.putExtra("profissao", list.get(i).getNome());
                 intent.putExtra("descricao", list.get(i).getTelefone());
                 intent.putExtra("Imagem", list.get(i).getMediaProfisional());
+                intent.putExtra("id",list.get(i).getId());
+                intent.putExtra("categoria",categoria);
                 startActivity(intent);
             }
         });
@@ -49,9 +51,7 @@ public class TelaProfissionaisDisponiveis extends AppCompatActivity {
         List<Profissional> profissionalList = null;
         try {
             profissionalList = apiCaller.categoria(categoria);
-            for (Profissional profissional:profissionalList) {
-                System.out.println(profissional.getMediaProfisional() + " " + profissional.getNome());
-            }
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

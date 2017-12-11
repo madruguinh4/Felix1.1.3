@@ -6,6 +6,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import tcc.usjt.felix113.Model.Cliente;
+import tcc.usjt.felix113.Model.ServicoContratado;
 
 /**
  * Created by alan0 on 22/10/2017.
