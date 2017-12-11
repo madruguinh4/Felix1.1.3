@@ -1,64 +1,54 @@
 package tcc.usjt.felix113;
 
-public class ProfissionalCustom {
+import java.util.ArrayList;
 
-	private Long id;
-	
-	private String nome;
+public class ProfissionalCustom extends ArrayList<ProfissionalCustom>{
 
-	private String sobrenome;
-	
-	private String telefone;
 
-	private String email;
+    private int imagem; // vai armazenar o identificador do recurso
+    private String nome;
+    private String telefone;
+    private String nota;
 
-	private String senha;
-	
-	public String getNome() {
-		return nome;
-	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
+    public ProfissionalCustom(int imagem, String nome, String telefone, String nota) {
+        this.imagem = imagem;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.nota = nota;
+    }
 
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
+    public String getNota() {
+        return nota;
+    }
 
-	public String getTelefone() {
-		return telefone;
-	}
+    public void setNota(String nota) {
+        this.nota = nota;
+    }
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+    public int getImagem() {
+        return imagem;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public String getTelefone() {
+        return telefone;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 }

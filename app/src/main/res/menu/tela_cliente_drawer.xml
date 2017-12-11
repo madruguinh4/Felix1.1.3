@@ -17,6 +17,10 @@
             android:id="@+id/navCliAvaliarServico"
             android:icon="@drawable/avaliar"
             android:title="Avaliar Serviço" />
+        <item
+            android:id="@+id/navCliIndicacao"
+            android:icon="@drawable/avaliar"
+            android:title="Indicação" />
       
 
 
