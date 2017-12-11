@@ -10,6 +10,7 @@ public class ServicoContratado {
     private Long idCliente;
     private Integer status;
     private String subcategoria;
+    private Profissional profissional;
 
     public Long getId() {
         return id;
@@ -50,4 +51,8 @@ public class ServicoContratado {
     public void setSubcategoria(String subcategoria) {
         this.subcategoria = subcategoria;
     }
+
+    public Profissional getProfissional() { return profissional; }
+
+    public void setProfissional(Profissional profissional) { this.profissional = profissional;}
 }
