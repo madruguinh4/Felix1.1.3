@@ -32,6 +32,9 @@ public class ServicosAgendados2 extends AppCompatActivity {
 
         profissao.setText(profi);
         descricao.setText(descri);
+        imageView.setImageResource(R.drawable.george);
+
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
