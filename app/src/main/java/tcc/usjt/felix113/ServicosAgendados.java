@@ -8,11 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-
-import tcc.usjt.felix113.Model.Profissional;
-import tcc.usjt.felix113.View.ViewProfissional.APICaller;
 
 public class ServicosAgendados extends AppCompatActivity {
 
@@ -21,13 +18,24 @@ public class ServicosAgendados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servicos_agendados);
 
-        ListView lista = (ListView)findViewById(R.id.ListServicosAgendados);
+  /*      ListView lista = (ListView)findViewById(R.id.ListServicosAgendados);
 
         String categoria = (String)getIntent().getSerializableExtra("categoria");
         final List<Profissional> list = adicionarServicos(categoria);
 
         ArrayAdapter adapter = new ServicosAgendadosAdapter(this, list);
         lista.setAdapter(adapter);
+*/
+
+
+
+
+        final List<AgendadosCustom> list = adicionarServicos();
+        ListView lista = (ListView) findViewById(R.id.ListServicosAgendados);
+
+        ArrayAdapter adapter = new AgendadosAdapter(this, list);
+        lista.setAdapter(adapter);
+
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -37,27 +45,25 @@ public class ServicosAgendados extends AppCompatActivity {
 
                 intent.putExtra("profissao", list.get(i).getNome());
                 intent.putExtra("descricao", list.get(i).getTelefone());
-                intent.putExtra("Imagem", list.get(i).getMediaProfisional());
+                intent.putExtra("Imagem", list.get(i).getNota());
                 startActivity(intent);
             }
         });
 
     }
 
-    private List<Profissional> adicionarServicos(String categoria) {
+    private ArrayList<AgendadosCustom> adicionarServicos() {
 
-        APICaller apiCaller = new APICaller();
-        List<Profissional> profissionalList = null;
-        try {
-            profissionalList = apiCaller.categoria(categoria);
-            for (Profissional profissional:profissionalList) {
-                System.out.println(profissional.getMediaProfisional() + " " + profissional.getNome());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return profissionalList;
+        ArrayList<AgendadosCustom> agendadosCustoms = new ArrayList<AgendadosCustom>();
+        AgendadosCustom e  = new AgendadosCustom( R.drawable.david,"Fulano","123321","3");
+        agendadosCustoms.add(e);
+
+        e = new AgendadosCustom( R.drawable.david,"Fulano","123321","3");
+        agendadosCustoms.add(e);
+
+        e = new AgendadosCustom( R.drawable.david,"Fulano","123321","3");
+        agendadosCustoms.add(e);
+
+        return agendadosCustoms;
     }
 }

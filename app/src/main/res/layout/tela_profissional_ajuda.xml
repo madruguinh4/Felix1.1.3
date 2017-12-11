@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tcc.usjt.felix113.View.ViewCliente.TelaAjuda">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtTelaAjuda2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EFETUAR LOGIN: \n
+1.	Sistema exibe a tela Login \n
+2.	O usuário informa os dados \n
+3.	Sistema válida os dados \n
+4.	Sistema exibe Menu Inicial \n
+\n
+
+REALIZAR CADASTRO \n
+1.	O aplicativo exibe os campos para preenchimento \n
+2.	O usuário preenche os campos para cadastro (Nome, Sobrenome, Telefone, E-mail e Senha) \n
+3.	O usuário seleciona a opção “cadastrar \n
+\n
+
+CADASTRAR SERVIÇO \n
+1.	O ator profissional fornece e-mail e senha \n
+2.	Ao fornecer e-mail e senha, o profissional entrará em uma tela, onde ele escolhe a categoria e o tipo de serviço que ele presta \n
+3.	Depois de cadastrar o serviço ele salva as informações no sistema \n
+4.	Após ter cadastrado o serviço, ele poderá futuramente cadastrar outros tipos de serviço que ele presta \n
+
+
+
+" />
+    </ScrollView>
+</LinearLayout>

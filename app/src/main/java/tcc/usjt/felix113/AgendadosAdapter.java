@@ -14,12 +14,12 @@ import java.util.List;
  * Created by alan0 on 23/08/2017.
  */
 
-public class IndicacaoAdapter extends ArrayAdapter<ProfissionalCustom> {
+public class AgendadosAdapter extends ArrayAdapter<AgendadosCustom> {
 
     private final Context context;
-    private final List<ProfissionalCustom> elementos;
+    private final List<AgendadosCustom> elementos;
 
-    public IndicacaoAdapter(Context context, List<ProfissionalCustom> elementos) {
+    public AgendadosAdapter(Context context, List<AgendadosCustom> elementos) {
         super(context, R.layout.linhaindicacao, elementos );
         this.context= context;
         this.elementos = elementos;

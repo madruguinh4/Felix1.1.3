@@ -2,7 +2,7 @@ package tcc.usjt.felix113;
 
 import java.util.ArrayList;
 
-public class ProfissionalCustom extends ArrayList<ProfissionalCustom>{
+public class AgendadosCustom extends ArrayList<AgendadosCustom>{
 
 
     private int imagem; // vai armazenar o identificador do recurso
@@ -12,7 +12,7 @@ public class ProfissionalCustom extends ArrayList<ProfissionalCustom>{
 
 
 
-    public ProfissionalCustom(int imagem, String nome, String telefone, String nota) {
+    public AgendadosCustom(int imagem, String nome, String telefone, String nota) {
         this.imagem = imagem;
         this.nome = nome;
         this.telefone = telefone;

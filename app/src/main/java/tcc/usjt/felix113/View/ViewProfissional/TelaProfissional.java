@@ -130,6 +130,8 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
             startActivity(intent);
 
         } else if (id == R.id.navProfAjuda) {
+            Intent intent = new Intent(TelaProfissional.this,TelaProfissionalAjuda.class);
+            startActivity(intent);
 
         } else if (id == R.id.navProfInfo) {
 

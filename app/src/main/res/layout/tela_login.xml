@@ -42,7 +42,7 @@
         android:layout_marginTop="51dp"
         android:ems="10"
         android:textAlignment="center"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint="Senha" />
 
     <Button

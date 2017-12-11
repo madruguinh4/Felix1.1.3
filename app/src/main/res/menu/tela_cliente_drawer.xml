@@ -19,7 +19,7 @@
             android:title="Avaliar Serviço" />
         <item
             android:id="@+id/navCliIndicacao"
-            android:icon="@drawable/avaliar"
+            android:icon="@drawable/indicacao2"
             android:title="Indicação" />
       
 

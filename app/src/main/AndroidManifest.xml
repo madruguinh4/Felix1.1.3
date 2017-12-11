@@ -63,7 +63,8 @@
         <activity android:name=".View.ViewCliente.TelaCancelaServicos" />
         <activity android:name=".View.ViewCliente.TelaListaServicoParaCancelar" />
         <activity android:name=".View.ViewProfissional.TelaProfissionalMeusServicosCancela" />
-        <activity android:name=".View.ViewCliente.TelaIndicacao"></activity>
+        <activity android:name=".View.ViewCliente.TelaIndicacao" />
+        <activity android:name=".View.ViewProfissional.TelaProfissionalAjuda"></activity>
     </application>
 
 </manifest>
