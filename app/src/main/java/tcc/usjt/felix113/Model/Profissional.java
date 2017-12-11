@@ -14,7 +14,7 @@ public class Profissional {
 
 	private String senha;
 
-	private Integer mediaProfisional;
+	private Integer mediaProfisional = 0;
 	
 	public String getNome() {
 		return nome;

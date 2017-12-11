@@ -41,9 +41,10 @@ public class ServicosContratadosAdapter extends ArrayAdapter<ServicoContratado> 
         TextView nota = (TextView) rowView.findViewById(R.id.txtLinhaNota);
 
         profissao.setText(elementos.get(position).getProfissional().getNome());
-        descricao.setText(elementos.get(position).getProfissional().getTelefone());
+        descricao.setText(elementos.get(position).getSubcategoria());
         imagem.setImageResource(R.drawable.david);
-        nota.setText(elementos.get(position).getProfissional().getMediaProfisional().toString());
+        Integer media = elementos.get(position).getProfissional().getMediaProfisional();
+        nota.setText(media != null ? media.toString() :"0");
         return rowView;
     }
 
