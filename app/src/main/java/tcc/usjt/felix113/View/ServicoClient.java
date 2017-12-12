@@ -28,4 +28,7 @@ public interface ServicoClient {
 
     @PUT("/api/servico-contratado/avaliar/{id}/{nota}")
     Call<Boolean> update(@Path("id") Long id,@Path("nota") Integer nota);
+
+    @GET("/api/servico-contratado/profissional/{idProfissional}")
+    Call<List<ServicoContratado>> findByProfissional(@Path("idProfissional") Long idProfissional);
 }

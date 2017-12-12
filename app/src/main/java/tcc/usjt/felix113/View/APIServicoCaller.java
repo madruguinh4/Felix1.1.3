@@ -161,4 +161,41 @@ public class APIServicoCaller {
         return success[0];
     }
 
+    public List<ServicoContratado> profissional(final Long idProfssional) throws IOException, InterruptedException {
+
+        final List<ServicoContratado>[] success = new List[]{new ArrayList()};
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Gson gson = new GsonBuilder()
+                        .setLenient()
+                        .create();
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(Constants.BASE_URL)
+                        .addConverterFactory(GsonConverterFactory.create(gson))
+                        .build();
+
+                ServicoClient client = retrofit.create(ServicoClient.class);
+
+                Call<List<ServicoContratado>> call = client.findByProfissional(idProfssional);
+
+                try {
+                    Response<List<ServicoContratado>> execute = call.execute();
+                    if(execute.body() != null){
+                        success[0] = execute.body();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+        thread.join();
+
+        return success[0];
+    }
+
 }

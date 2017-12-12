@@ -1,6 +1,7 @@
 package tcc.usjt.felix113.View.ViewProfissional;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,9 +17,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import tcc.usjt.felix113.ClienteCustom;
+import tcc.usjt.felix113.Model.ServicoContratado;
 import tcc.usjt.felix113.R;
+import tcc.usjt.felix113.View.APIServicoCaller;
+
 public class TelaProfissional extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -41,7 +46,7 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
 
 // Preenche o List View da tela do Profissional
 
-        final ArrayList<ClienteCustom> list = adicionarServicos();
+        final List<ServicoContratado> list = adicionarServicos();
         ListView lista = (ListView)findViewById(R.id.ListViewConteTelaProfissional);
 
 
@@ -53,34 +58,28 @@ public class TelaProfissional extends AppCompatActivity implements NavigationVie
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 Intent intent = new Intent (TelaProfissional.this, TelaProfissionalEscolhePrestaServico.class);
 
-                intent.putExtra("nome", list.get(i).getNome());
-                intent.putExtra("telefone", list.get(i).getTelefone());
+                intent.putExtra("nome", list.get(i).getCliente().getNome());
+                intent.putExtra("telefone", list.get(i).getCliente().getTelefone());
                 startActivity(intent);
             }
         });
 
     }
 
-    private ArrayList<ClienteCustom> adicionarServicos() {
+    private List<ServicoContratado> adicionarServicos() {
 
-        ArrayList<ClienteCustom> clienteCustoms = new ArrayList<ClienteCustom>();
-        ClienteCustom e  = new ClienteCustom("Juliana","123123");
-        clienteCustoms.add(e);
+        List<ServicoContratado> s = new ArrayList<>();
 
-        e = new ClienteCustom("Pedro",
-                "1235677 ");
-        clienteCustoms.add(e);
-        e = new ClienteCustom("Maria",
-                "65432 ");
-        clienteCustoms.add(e);
-        e = new ClienteCustom("Jose",
-                "3456756 ");
-        clienteCustoms.add(e);
-        e = new ClienteCustom("Pedro",
-                "4324324 ");
-        clienteCustoms.add(e);
+        try {
+            SharedPreferences pref = getSharedPreferences("profissional", 0);
+            long id = pref.getLong("id", 0L);
+            APIServicoCaller api = new APIServicoCaller();
+            s = api.profissional(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        return clienteCustoms;
+        return s;
     }
 
     @Override
