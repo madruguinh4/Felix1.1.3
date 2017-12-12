@@ -126,4 +126,39 @@ public class APIServicoCaller {
         return success[0];
     }
 
+    public boolean update(final Long id, final int nota) throws IOException, InterruptedException {
+
+        final boolean[] success = {false};
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Gson gson = new GsonBuilder()
+                        .setLenient()
+                        .create();
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(Constants.BASE_URL)
+                        .addConverterFactory(GsonConverterFactory.create(gson))
+                        .build();
+
+                ServicoClient client = retrofit.create(ServicoClient.class);
+
+                Call<Boolean> call = client.update(id,nota);
+
+                try {
+                    Response<Boolean> execute = call.execute();
+                    success[0] = execute.body();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+        thread.join();
+
+        return success[0];
+    }
+
 }
