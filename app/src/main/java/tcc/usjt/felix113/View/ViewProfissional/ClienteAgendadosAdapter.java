@@ -8,19 +8,23 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import tcc.usjt.felix113.ClienteCustom;
+import tcc.usjt.felix113.Model.ServicoContratado;
 import tcc.usjt.felix113.R;
+import tcc.usjt.felix113.ServicosAgendados;
+import tcc.usjt.felix113.ServicosContratadosAdapter;
 
 /**
  * Created by alan0 on 07/12/2017.
  */
 
-public class ClienteAgendadosAdapter extends ArrayAdapter<ClienteCustom> {
+public class ClienteAgendadosAdapter extends ArrayAdapter<ServicoContratado> {
     private final Context context;
-    private final ArrayList<ClienteCustom> elementos;
+    private final List<ServicoContratado> elementos;
 
-    public ClienteAgendadosAdapter(Context context, ArrayList<ClienteCustom> elementos) {
+    public ClienteAgendadosAdapter(Context context, List<ServicoContratado> elementos) {
         super(context, R.layout.linha2, elementos);
         this.context = context;
         this.elementos = elementos;
@@ -34,8 +38,8 @@ public class ClienteAgendadosAdapter extends ArrayAdapter<ClienteCustom> {
         TextView nome = (TextView) rowView.findViewById(R.id.txtNomeProfissionallinha2);
         TextView telefone = (TextView) rowView.findViewById(R.id.txtCategoriaProfissionallinha2);
 
-        nome.setText(elementos.get(position).getNome());
-        telefone.setText(elementos.get(position).getTelefone());
+        nome.setText(elementos.get(position).getCliente().getNome());
+        telefone.setText(elementos.get(position).getCliente().getTelefone());
 
         return rowView;
     }

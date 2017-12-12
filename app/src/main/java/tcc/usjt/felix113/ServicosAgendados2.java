@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+
+import tcc.usjt.felix113.View.APIServicoCaller;
 import tcc.usjt.felix113.View.ViewCliente.TelaCliente;
 
 public class ServicosAgendados2 extends AppCompatActivity {
@@ -19,33 +22,38 @@ public class ServicosAgendados2 extends AppCompatActivity {
         setContentView(R.layout.servicos_agendados2);
 
         Intent intent = getIntent();
-        String profi = (String) intent.getSerializableExtra("profissao");
-        String descri = (String) intent.getSerializableExtra("descricao");
-        ImageView imagem = (ImageView) intent.getSerializableExtra("imagem");
         Button btn = (Button)findViewById(R.id.button);
 
-        TextView profissao = (TextView)findViewById(R.id.txtServicosAgendados2Profissao);
-        TextView descricao = (TextView)findViewById(R.id.txtServicosAgendados2Descricao);
-        ImageView imageView = (ImageView)findViewById(R.id.imageServicosAgendados2);
 
 
 
-        profissao.setText(profi);
-        descricao.setText(descri);
-        imageView.setImageResource(R.drawable.george);
 
+        final Long id = (Long) intent.getSerializableExtra("id");
 
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ServicosAgendados2.this,TelaCliente.class);
-                startActivity(intent);
+                if(delete(id)) {
+                    Intent intent = new Intent(ServicosAgendados2.this, TelaCliente.class);
+                    startActivity(intent);
+                }
             }
         });
 
+    }
 
 
-
+    private boolean delete(Long id) {
+        boolean s = false;
+        try {
+            APIServicoCaller apiServicoCaller = new APIServicoCaller();
+            s = apiServicoCaller.delete(id);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return s;
     }
 }
