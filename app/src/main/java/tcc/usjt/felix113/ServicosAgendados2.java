@@ -24,7 +24,12 @@ public class ServicosAgendados2 extends AppCompatActivity {
         Intent intent = getIntent();
         Button btn = (Button)findViewById(R.id.button);
 
+
+
+
+
         final Long id = (Long) intent.getSerializableExtra("id");
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
