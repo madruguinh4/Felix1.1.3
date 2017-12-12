@@ -10,16 +10,18 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import tcc.usjt.felix113.Model.ServicoContratado;
+
 /**
  * Created by alan0 on 23/08/2017.
  */
 
-public class IndicacaoAdapter extends ArrayAdapter<ProfissionalCustom> {
+public class IndicacaoAdapter extends ArrayAdapter<ServicoContratado> {
 
     private final Context context;
-    private final List<ProfissionalCustom> elementos;
+    private final List<ServicoContratado> elementos;
 
-    public IndicacaoAdapter(Context context, List<ProfissionalCustom> elementos) {
+    public IndicacaoAdapter(Context context, List<ServicoContratado> elementos) {
         super(context, R.layout.linhaindicacao, elementos );
         this.context= context;
         this.elementos = elementos;
@@ -37,10 +39,10 @@ public class IndicacaoAdapter extends ArrayAdapter<ProfissionalCustom> {
         ImageView imagem = (ImageView) rowView.findViewById(R.id.imagemindicacao);
         TextView nota = (TextView) rowView.findViewById(R.id.txtlinhaindicacaoNota);
 
-        profissao.setText(elementos.get(position).getNome());
-        descricao.setText(elementos.get(position).getTelefone());
+        profissao.setText(elementos.get(position).getProfissional().getNome());
+        descricao.setText(elementos.get(position).getSubcategoria());
         imagem.setImageResource(R.drawable.david);
-        nota.setText(elementos.get(position).getNota().toString());
+        nota.setText(elementos.get(position).getProfissional().getMediaProfisional().toString());
         return rowView;
     }
 

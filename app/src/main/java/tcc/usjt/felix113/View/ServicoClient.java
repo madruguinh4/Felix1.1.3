@@ -31,4 +31,7 @@ public interface ServicoClient {
 
     @GET("/api/servico-contratado/profissional/{idProfissional}")
     Call<List<ServicoContratado>> findByProfissional(@Path("idProfissional") Long idProfissional);
+
+    @GET("/api/profissional/")
+    Call<List<ServicoContratado>> findAll();
 }

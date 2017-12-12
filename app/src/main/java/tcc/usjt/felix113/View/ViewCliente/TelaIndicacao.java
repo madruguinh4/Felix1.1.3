@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import tcc.usjt.felix113.IndicacaoAdapter;
+import tcc.usjt.felix113.Model.ServicoContratado;
 import tcc.usjt.felix113.ProfissionalCustom;
 import tcc.usjt.felix113.R;
+import tcc.usjt.felix113.View.APIServicoCaller;
 
 public class TelaIndicacao extends AppCompatActivity {
 
@@ -19,7 +22,7 @@ public class TelaIndicacao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_indicacao);
 
-       final List<ProfissionalCustom> list = adicionarServicos();
+       final List<ServicoContratado> list = adicionarServicos();
         ListView lista = (ListView) findViewById(R.id.ListIndicacao);
 
         ArrayAdapter adapter = new IndicacaoAdapter(this, list);
@@ -27,19 +30,19 @@ public class TelaIndicacao extends AppCompatActivity {
 
     }
 
-    private ArrayList<ProfissionalCustom> adicionarServicos() {
+    private List<ServicoContratado> adicionarServicos() {
 
-        ArrayList<ProfissionalCustom> profissionalCustoms = new ArrayList<ProfissionalCustom>();
-        ProfissionalCustom e  = new ProfissionalCustom( R.drawable.david,"Fulano","123321","3");
-        profissionalCustoms.add(e);
+        APIServicoCaller apiServicoCaller = new APIServicoCaller();
+        List<ServicoContratado> profissional = new ArrayList<>();
+        try {
+            profissional = apiServicoCaller.profissional();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        e = new ProfissionalCustom( R.drawable.david,"Fulano","123321","3");
-        profissionalCustoms.add(e);
-
-        e = new ProfissionalCustom( R.drawable.david,"Fulano","123321","3");
-        profissionalCustoms.add(e);
-
-        return profissionalCustoms;
+        return profissional;
     }
 }
 
